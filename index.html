@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Strict CSP. An inline script runs only if its sha256 is listed: the one hash is the theme
+       guard further down, so editing that script means re-hashing it (smoke check 29 reports a
+       mismatch). Inline on*="" handlers never run; attach listeners from a script file. Add a
+       source only when the page loads from it, as an exact host or a pinned path, never a whole
+       package CDN: a Convex deployment adds its https and wss URLs to connect-src, and sign-in
+       adds the CSP table in packages/neorgon-ui/auth/README.md. frame-ancestors, report-uri and
+       sandbox are ignored in a meta tag, so they are left out. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-na6phygP/tfoCIp4oBeQgGJJpQsZob/udrLum+20QTI='; style-src 'self' 'unsafe-inline' https://cdn.neorgon.org/v1.0.0/; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cdn.neorgon.org/v1.0.0/; manifest-src 'self'; frame-src 'none'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <meta name="neo-analytics" content="off">
+  <meta name="neo-favicon" content="off">
+  <meta name="neo-repo" content="energon-a-secas/hobbyorbit-site">
+  <meta name="beacon" content="off">
+  <meta name="referrer" content="no-referrer">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Hobby Orbit">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="neo-mark" content="on">
+  <title>Hobby Orbit | Follow your interests</title>
+  <meta name="description" content="Explore your hobbies on a wheel and record moods, switches, and the things that draw you back">
+  <meta property="og:title" content="Hobby Orbit | Follow your interests">
+  <meta property="og:description" content="Explore your hobbies on a wheel and record moods, switches, and the things that draw you back">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hobbyorbit.neorgon.com/">
+  <meta property="og:site_name" content="Neorgon">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hobby Orbit | Follow your interests">
+  <meta name="twitter:description" content="Explore your hobbies on a wheel and record moods, switches, and the things that draw you back">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hobbyorbit.neorgon.com/">
+  <meta property="og:locale" content="en_US">
+  <meta name="theme-color" content="#040714">
+  <meta property="og:image" content="https://hobbyorbit.neorgon.com/og-preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hobby Orbit: a little room for what draws you">
+  <meta name="twitter:image" content="https://hobbyorbit.neorgon.com/og-preview.jpg">
+  <!-- Fleet design tokens: canonical, do not redeclare locally (docs/references/new-project-context.md, Design) -->
+  <link rel="stylesheet" href="https://cdn.neorgon.org/v1.0.0/styles/base.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/wheel.css">
+  <!-- template:styles -->
+  <!-- /template:styles -->
+  <!-- Neorgon Header Kit (vendored; ?header=live swaps CSS to CDN). Keep after style.css, the kit owns the header. -->
+  <script>(function(){var m=location.search.match(/[?&]theme=([\w-]+)/)||document.cookie.match(/(?:^|;\s*)neo_theme=([\w-]+)/);if(m&&m[1]!=='default')document.documentElement.dataset.theme=decodeURIComponent(m[1]);})();</script>
+  <link rel="stylesheet" href="css/neorgon-header.css">
+  <link rel="stylesheet" href="css/neorgon-themes.css">
+  <link rel="stylesheet" href="https://cdn.neorgon.org/v1.0.0/header/season.css">
+  <script defer src="js/neorgon-header.js"></script>
+  <!-- Neorgon Footer Kit (vendored). Pins the footer to the viewport floor on short
+       pages and builds the meta bar + back-to-top. See packages/neorgon-ui/footer/README.md.
+       Optional stamps: <meta name="neo-repo"|"neo-version"|"neo-updated"> -->
+  <link rel="stylesheet" href="css/neorgon-footer.css">
+  <script defer src="js/neorgon-footer.js"></script>
+  <!-- Neorgon Beacon Kit (vendored). Bottom-left correction reporter: it
+       carries page context to balise.neorgon.com in a URL fragment and the
+       visitor writes there. No form on this page and no request from it.
+       Opt out per page with <meta name="beacon" content="off">.
+       See packages/neorgon-ui/beacon/README.md. -->
+  <meta name="beacon-site" content="hobbyorbit-site">
+  <link rel="stylesheet" href="css/neorgon-beacon.css">
+  <script defer src="js/neorgon-beacon.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Hobby Orbit",
+    "description": "Explore your hobbies on a wheel and record moods, switches, and the things that draw you back",
+    "url": "https://hobbyorbit.neorgon.com/",
+    "applicationCategory": "LifestyleApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Organization", "name": "Neorgon", "url": "https://neorgon.com/" }
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Neorgon Header Kit contract (packages/neorgon-ui/header/README.md).
+       data-header-mode: hub (glass) | content (sticky gradient) | app (slim, auto-hides on scroll).
+       Pick content for learning/content sites, app for tool-dense sites. -->
+  <header class="header-bar" data-header-mode="app">
+    <div class="header-logo">
+      <!-- PATTERN: one link: mark + name go to THIS site's home (root or #home)
+           so clicking either resets the view. The hub icon in .header-right
+           is the only header link to neorgon.com. -->
+      <a href="./" class="header-title-link">
+        <img src="energon-classic-logo.png" class="header-logo-img" alt="">
+        <div class="header-title-wrap">
+          <h1>Hobby Orbit</h1>
+          <div class="header-subtitle">A little space for changing interests</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- .header-right owns margin-left:auto; home icon is always last. -->
+    <div class="header-right">
+      <!-- template:actions -->
+      <!-- Optional .header-actions: keep one primary control visible with
+           data-keep-mobile. Wrap text beside an SVG in <span>. -->
+      <!-- /template:actions -->
+
+      <a class="header-home" href="https://neorgon.com/" title="neorgon.com" aria-label="Neorgon home">
+        <svg class="nh-hub-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 4.4 18.58 8.2 18.58 15.8 12 19.6 5.42 15.8 5.42 8.2Z" fill="currentColor" stroke="none"/>
+          <g class="nh-orbit">
+            <path d="M2.47 17.50 A11.0 11.0 0 0 1 14.85 1.37" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round"/>
+            <path d="M21.53 6.50 A11.0 11.0 0 0 1 9.15 22.63" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round"/>
+            <circle cx="21.71" cy="6.84" r="1.25" fill="currentColor"/>
+            <circle cx="2.29" cy="17.16" r="1.25" fill="currentColor"/>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <noscript><p>This wheel needs JavaScript. Enable it to choose hobbies and keep your journal on this device.</p></noscript>
+  <!-- template:main -->
+  <main id="main" tabindex="-1">
+    <div class="orbit-app">
+      <div class="app-intro">
+        <div><p class="eyebrow">Your interests, in their own time</p><h2 id="page-title">Make room for what draws you.</h2></div>
+        <p class="intro-note">Explore a possibility. Keep a little record of where you actually are.</p>
+      </div>
+      <div id="boot-state" class="boot-state" role="status"><span class="loading-wheel" aria-hidden="true"></span><p>Getting your wheel ready…</p></div>
+      <div id="app-content" hidden>
+        <div class="app-toolbar">
+          <div class="app-tabs" role="tablist" aria-label="Hobby Orbit sections">
+            <button type="button" id="tab-wheel" role="tab" aria-selected="true" aria-controls="panel-wheel" data-view="wheel">Wheel</button>
+            <button type="button" id="tab-journal" role="tab" aria-selected="false" aria-controls="panel-journal" tabindex="-1" data-view="journal">Journal <span id="journal-count" class="nav-count">0</span></button>
+            <button type="button" id="tab-patterns" role="tab" aria-selected="false" aria-controls="panel-patterns" tabindex="-1" data-view="patterns">Patterns</button>
+            <button type="button" id="tab-settings" role="tab" aria-selected="false" aria-controls="panel-settings" tabindex="-1" data-view="settings">Settings</button>
+          </div>
+          <span id="save-indicator" class="save-indicator">On this device</span>
+        </div>
+        <div id="storage-notice" class="notice" hidden></div>
+        <p id="app-status" class="app-status" role="status" aria-live="polite" aria-atomic="true"></p>
+        <section id="panel-wheel" role="tabpanel" aria-labelledby="tab-wheel">
+          <div class="current-jump"><div><p class="eyebrow">Right now</p><strong id="current-jump-label">No hobby recorded yet</strong><p id="current-jump-feeling" class="muted"></p></div><button type="button" class="btn btn--secondary" data-action="go-checkin">Check in</button></div>
+          <div class="wheel-layout">
+            <div class="explore-column">
+              <div class="section-heading"><div><div class="heading-line"><h3>Your wheel</h3><span id="starter-label" class="tag">Starter wheel</span></div><p id="wheel-context" class="muted">Six starting points. Make them yours.</p></div><button class="btn btn--quiet" type="button" data-action="manage">Edit wheel</button></div>
+              <nav id="wheel-breadcrumb" class="breadcrumb" aria-label="Wheel location"></nav>
+              <div class="spin-controls"><button type="button" id="spin-button" class="btn btn--primary" data-action="spin">Spin the wheel</button><p id="spin-scope" class="muted">A suggestion, with no obligation.</p></div>
+              <div id="wheel-mount"></div>
+              <div id="suggestion" class="suggestion" aria-label="Wheel suggestion"></div>
+              <details id="hobby-manager" class="hobby-manager"><summary>Make this wheel yours <span>Hobbies, order, colors &amp; icons</span></summary><div class="manager-body"><p class="muted">Your order is a possible path. Your journal keeps the path you actually take.</p><div id="manager-location" class="manager-location"></div><div class="button-row"><button type="button" class="btn btn--secondary" data-action="catalog">Browse hobbies</button><button type="button" class="btn btn--quiet" data-action="add-custom">Create a hobby</button></div><ol id="manager-list" class="manager-list"></ol></div></details>
+            </div>
+            <aside class="checkin-column" aria-label="Current hobby and check-in">
+              <section id="current-state" class="current-state" aria-label="Your current activity"></section>
+              <section class="checkin-section" aria-labelledby="checkin-title">
+                <h3 id="checkin-title">How does today feel?</h3>
+                <p class="muted checkin-intro">You can be here and not be in the mood.</p>
+                <form id="checkin-form" class="form-stack">
+                  <div class="field"><label for="checkin-hobby">What are you with right now?</label><select id="checkin-hobby" name="hobby" required></select></div>
+                  <fieldset class="mood-fieldset"><legend>Feeling</legend><div id="mood-options" class="mood-options"></div></fieldset>
+                  <details class="checkin-extras"><summary>Add a trigger or a note <span class="optional">optional</span></summary><div class="form-stack"><div class="field"><label for="checkin-trigger">What prompted this?</label><select id="checkin-trigger" name="trigger"></select></div><div class="field" id="custom-trigger-field" hidden><label for="checkin-custom-trigger">Your trigger</label><input id="checkin-custom-trigger" name="customTrigger" maxlength="120" placeholder="A feeling, a moment, a change…"></div><div class="field"><label for="checkin-note">A note for later</label><textarea id="checkin-note" name="note" rows="3" maxlength="4000" placeholder="What would you like to remember?"></textarea></div></div></details>
+                  <p id="checkin-error" class="form-error" role="alert" hidden></p>
+                  <button type="submit" class="btn btn--primary btn--wide">Save check-in</button>
+                  <p class="field-hint">Only saving a check-in changes your current hobby.</p>
+                </form>
+              </section>
+            </aside>
+          </div>
+        </section>
+        <section id="panel-journal" role="tabpanel" aria-labelledby="tab-journal" hidden><div class="view-heading"><p class="eyebrow">The path you actually took</p><h2>Your journal</h2><p class="muted">Feelings, changes, and the small things that brought you here.</p></div><div id="journal-list"></div></section>
+        <section id="panel-patterns" role="tabpanel" aria-labelledby="tab-patterns" hidden><div class="view-heading"><p class="eyebrow">A little perspective</p><h2>What you have noticed</h2><p class="muted">Observations from your check-ins. A spin never counts as a change.</p></div><div id="patterns-content"></div></section>
+        <section id="panel-settings" role="tabpanel" aria-labelledby="tab-settings" hidden>
+          <div class="view-heading"><p class="eyebrow">Keep it yours</p><h2>Settings &amp; your data</h2><p class="muted">Your wheel and journal are stored in this browser. No account needed.</p></div>
+          <div class="settings-layout"><section class="settings-section"><h3>How this feels</h3><form id="settings-form" class="form-stack"><div class="field"><label for="hemisphere">Seasons where you are</label><select id="hemisphere" name="hemisphere"><option value="south">Southern hemisphere</option><option value="north">Northern hemisphere</option></select><p class="field-hint">Used only to label the seasons in your journal patterns.</p></div><div class="field"><label for="motion">Wheel motion</label><select id="motion" name="motion"><option value="system">Follow my device</option><option value="reduce">Reduce motion</option></select></div><button type="submit" class="btn btn--secondary">Save preferences</button></form></section>
+          <section class="settings-section"><h3>Keep a copy</h3><p class="muted">A backup contains your full wheel, check-ins, triggers, and private notes. Save it somewhere you trust.</p><div class="button-row"><button type="button" class="btn btn--secondary" data-action="export">Download backup</button><button type="button" class="btn btn--quiet" data-action="import">Import backup</button></div><input id="import-file" type="file" accept=".json,application/json" hidden><p id="import-error" class="form-error" role="alert" hidden></p><p class="field-hint">Clearing browser data removes your local journal. A downloaded backup lets you restore it or move it to another device.</p><div id="recovery-section" class="notice" hidden><h4>Original data preserved</h4><p id="recovery-description"></p><button type="button" class="btn btn--secondary" data-action="recovery">Download original data</button></div></section>
+          <section class="settings-section"><h3>Share a small update</h3><p class="muted">Choose exactly what someone else sees. Notes stay out unless you include one.</p><button type="button" class="btn btn--secondary" data-action="share">Preview my update</button></section><section id="pwa-slot" class="settings-section"></section></div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <!-- /template:main -->
+
+  <!-- Neorgon Footer Kit contract. data-footer-mode: minimal (default) | content | app.
+       Replace the copy with a real note (privacy, data provenance, disclaimer) or drop
+       the text entirely, the kit appends "Part of Neorgon" and any version stamps. -->
+  <footer class="neo-footer" data-footer-mode="app">
+    <p>Your interests can change. This is a place to notice.</p>
+  </footer>
+
+  <div id="app-toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

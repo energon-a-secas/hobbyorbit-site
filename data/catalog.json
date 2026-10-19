@@ -1,0 +1,4840 @@
+{
+  "schema": 1,
+  "source": "Aficion",
+  "generated": "2026-10-19",
+  "roots": [
+    "category.model",
+    "category.rail",
+    "category.brick",
+    "category.figure",
+    "category.tabletop",
+    "category.anime",
+    "category.film",
+    "category.video",
+    "category.starwars",
+    "category.radio",
+    "category.maker",
+    "category.drone",
+    "category.astro",
+    "category.music",
+    "category.retro",
+    "category.game",
+    "category.cosplay",
+    "category.coffee",
+    "category.book",
+    "category.garden",
+    "category.kitchen",
+    "category.outdoor",
+    "category.core"
+  ],
+  "nodes": {
+    "category.model": {
+      "id": "category.model",
+      "label": "Scale Models",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [
+        "model.gunpla",
+        "model.scale-armour",
+        "model.aircraft",
+        "model.dioramas",
+        "model.airbrush-rig",
+        "model.decals"
+      ],
+      "sourceId": "model"
+    },
+    "model.gunpla": {
+      "id": "model.gunpla",
+      "label": "Gunpla",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [
+        "model.gunpla.panel-lining",
+        "model.gunpla.topcoat",
+        "model.gunpla.weathering",
+        "model.gunpla.scribing",
+        "model.gunpla.nub-removal",
+        "model.gunpla.seam-lines",
+        "model.gunpla.pla-plate",
+        "model.gunpla.led-install"
+      ],
+      "sourceId": "model.gunpla"
+    },
+    "model.scale-armour": {
+      "id": "model.scale-armour",
+      "label": "Scale Armour",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "model.scale-armour"
+    },
+    "model.aircraft": {
+      "id": "model.aircraft",
+      "label": "Aircraft Kits",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "model.aircraft"
+    },
+    "model.dioramas": {
+      "id": "model.dioramas",
+      "label": "Dioramas",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "model.dioramas"
+    },
+    "model.airbrush-rig": {
+      "id": "model.airbrush-rig",
+      "label": "Airbrush Rig",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "model.airbrush-rig"
+    },
+    "model.decals": {
+      "id": "model.decals",
+      "label": "Decals",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "model.decals"
+    },
+    "category.rail": {
+      "id": "category.rail",
+      "label": "Model Railroading",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [
+        "rail.layout",
+        "rail.scale-choice",
+        "rail.benchwork",
+        "rail.trackwork",
+        "rail.wiring",
+        "rail.dcc",
+        "rail.decoder-install",
+        "rail.locos",
+        "rail.rolling-stock",
+        "rail.structures",
+        "rail.scenery",
+        "rail.weathering",
+        "rail.operations",
+        "rail.prototype",
+        "rail.railfanning",
+        "rail.cab-camera",
+        "rail.clubs"
+      ],
+      "sourceId": "rail"
+    },
+    "rail.layout": {
+      "id": "rail.layout",
+      "label": "Layout Building",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [
+        "rail.layout.track-plan",
+        "rail.layout.radius",
+        "rail.layout.staging",
+        "rail.layout.helix",
+        "rail.layout.grades",
+        "rail.layout.aisle",
+        "rail.layout.backdrop",
+        "rail.layout.lighting"
+      ],
+      "sourceId": "rail.layout"
+    },
+    "rail.scale-choice": {
+      "id": "rail.scale-choice",
+      "label": "Scale and Gauge",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.scale-choice"
+    },
+    "rail.benchwork": {
+      "id": "rail.benchwork",
+      "label": "Benchwork",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.benchwork"
+    },
+    "rail.trackwork": {
+      "id": "rail.trackwork",
+      "label": "Trackwork",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.trackwork"
+    },
+    "rail.wiring": {
+      "id": "rail.wiring",
+      "label": "Layout Wiring",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.wiring"
+    },
+    "rail.dcc": {
+      "id": "rail.dcc",
+      "label": "DCC",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [
+        "rail.dcc.addressing",
+        "rail.dcc.cv",
+        "rail.dcc.consisting",
+        "rail.dcc.sound",
+        "rail.dcc.detection",
+        "rail.dcc.jmri",
+        "rail.dcc.throttles"
+      ],
+      "sourceId": "rail.dcc"
+    },
+    "rail.decoder-install": {
+      "id": "rail.decoder-install",
+      "label": "Decoder Install",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.decoder-install"
+    },
+    "rail.locos": {
+      "id": "rail.locos",
+      "label": "Locomotives",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.locos"
+    },
+    "rail.rolling-stock": {
+      "id": "rail.rolling-stock",
+      "label": "Rolling Stock",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.rolling-stock"
+    },
+    "rail.structures": {
+      "id": "rail.structures",
+      "label": "Structure Building",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.structures"
+    },
+    "rail.scenery": {
+      "id": "rail.scenery",
+      "label": "Scenery",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.scenery"
+    },
+    "rail.weathering": {
+      "id": "rail.weathering",
+      "label": "Weathering Stock",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.weathering"
+    },
+    "rail.operations": {
+      "id": "rail.operations",
+      "label": "Operating Sessions",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.operations"
+    },
+    "rail.prototype": {
+      "id": "rail.prototype",
+      "label": "Prototype Research",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.prototype"
+    },
+    "rail.railfanning": {
+      "id": "rail.railfanning",
+      "label": "Railfanning",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.railfanning"
+    },
+    "rail.cab-camera": {
+      "id": "rail.cab-camera",
+      "label": "Onboard Cab Camera",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.cab-camera"
+    },
+    "rail.clubs": {
+      "id": "rail.clubs",
+      "label": "Modular Clubs",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.clubs"
+    },
+    "category.brick": {
+      "id": "category.brick",
+      "label": "Brick Building",
+      "icon": "brick",
+      "color": "#fcd34d",
+      "children": [
+        "brick.moc",
+        "brick.snot",
+        "brick.stud-io",
+        "brick.instructions",
+        "brick.technic",
+        "brick.powered",
+        "brick.mindstorms",
+        "brick.gbc",
+        "brick.trains",
+        "brick.dioramas",
+        "brick.shows",
+        "brick.sets",
+        "brick.minifigs",
+        "brick.parts",
+        "brick.sorting"
+      ],
+      "sourceId": "brick"
+    },
+    "brick.moc": {
+      "id": "brick.moc",
+      "label": "MOC Building",
+      "icon": "brick",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "brick.moc"
+    },
+    "brick.trains": {
+      "id": "brick.trains",
+      "label": "Lego Trains",
+      "icon": "brick",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "brick.trains"
+    },
+    "brick.snot": {
+      "id": "brick.snot",
+      "label": "SNOT Technique",
+      "icon": "brick",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "brick.snot"
+    },
+    "brick.stud-io": {
+      "id": "brick.stud-io",
+      "label": "Digital Design",
+      "icon": "brick",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "brick.stud-io"
+    },
+    "brick.instructions": {
+      "id": "brick.instructions",
+      "label": "Publishing Instructions",
+      "icon": "brick",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "brick.instructions"
+    },
+    "brick.technic": {
+      "id": "brick.technic",
+      "label": "Technic",
+      "icon": "brick",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "brick.technic"
+    },
+    "brick.powered": {
+      "id": "brick.powered",
+      "label": "Powered Motors",
+      "icon": "brick",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "brick.powered"
+    },
+    "brick.mindstorms": {
+      "id": "brick.mindstorms",
+      "label": "Robotics Sets",
+      "icon": "brick",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "brick.mindstorms"
+    },
+    "brick.gbc": {
+      "id": "brick.gbc",
+      "label": "Ball Contraptions",
+      "icon": "brick",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "brick.gbc"
+    },
+    "brick.dioramas": {
+      "id": "brick.dioramas",
+      "label": "Brick Dioramas",
+      "icon": "brick",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "brick.dioramas"
+    },
+    "brick.shows": {
+      "id": "brick.shows",
+      "label": "Fan Shows",
+      "icon": "brick",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "brick.shows"
+    },
+    "brick.sets": {
+      "id": "brick.sets",
+      "label": "Set Collecting",
+      "icon": "brick",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "brick.sets"
+    },
+    "brick.minifigs": {
+      "id": "brick.minifigs",
+      "label": "Minifigure Collecting",
+      "icon": "brick",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "brick.minifigs"
+    },
+    "brick.parts": {
+      "id": "brick.parts",
+      "label": "Parts Sourcing",
+      "icon": "brick",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "brick.parts"
+    },
+    "brick.sorting": {
+      "id": "brick.sorting",
+      "label": "Sorting and Storage",
+      "icon": "brick",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "brick.sorting"
+    },
+    "category.figure": {
+      "id": "category.figure",
+      "label": "Figures and Miniatures",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [
+        "figure.mini-painting",
+        "figure.printed-minis",
+        "figure.basing",
+        "figure.army-painting",
+        "figure.busts",
+        "figure.competition",
+        "figure.repaints",
+        "figure.garage-kits",
+        "figure.sculpting",
+        "figure.casting",
+        "figure.figure-photo",
+        "figure.collecting",
+        "figure.scale-figures",
+        "figure.articulated",
+        "figure.bootlegs",
+        "figure.display"
+      ],
+      "sourceId": "figure"
+    },
+    "figure.mini-painting": {
+      "id": "figure.mini-painting",
+      "label": "Miniature Painting",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.mini-painting"
+    },
+    "figure.garage-kits": {
+      "id": "figure.garage-kits",
+      "label": "Garage Kits",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [
+        "figure.garage-kits.flash",
+        "figure.garage-kits.pinning",
+        "figure.garage-kits.degrease",
+        "figure.garage-kits.priming",
+        "figure.garage-kits.pinholes",
+        "figure.garage-kits.skin",
+        "figure.garage-kits.face",
+        "figure.garage-kits.hair",
+        "figure.garage-kits.coats"
+      ],
+      "sourceId": "figure.garage-kits"
+    },
+    "figure.printed-minis": {
+      "id": "figure.printed-minis",
+      "label": "Printed Minis",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.printed-minis"
+    },
+    "figure.basing": {
+      "id": "figure.basing",
+      "label": "Bases and Plinths",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.basing"
+    },
+    "figure.army-painting": {
+      "id": "figure.army-painting",
+      "label": "Batch Painting",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.army-painting"
+    },
+    "figure.busts": {
+      "id": "figure.busts",
+      "label": "Display Busts",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.busts"
+    },
+    "figure.competition": {
+      "id": "figure.competition",
+      "label": "Painting Contests",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.competition"
+    },
+    "figure.repaints": {
+      "id": "figure.repaints",
+      "label": "Custom Repaints",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.repaints"
+    },
+    "figure.sculpting": {
+      "id": "figure.sculpting",
+      "label": "Sculpting",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.sculpting"
+    },
+    "figure.casting": {
+      "id": "figure.casting",
+      "label": "Moulding and Casting",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.casting"
+    },
+    "figure.figure-photo": {
+      "id": "figure.figure-photo",
+      "label": "Figure Photography",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.figure-photo"
+    },
+    "figure.collecting": {
+      "id": "figure.collecting",
+      "label": "Figure Collecting",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.collecting"
+    },
+    "figure.scale-figures": {
+      "id": "figure.scale-figures",
+      "label": "Scale Figures",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.scale-figures"
+    },
+    "figure.articulated": {
+      "id": "figure.articulated",
+      "label": "Articulated Figures",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.articulated"
+    },
+    "figure.bootlegs": {
+      "id": "figure.bootlegs",
+      "label": "Bootleg Literacy",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.bootlegs"
+    },
+    "figure.display": {
+      "id": "figure.display",
+      "label": "Display and Lighting",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.display"
+    },
+    "category.tabletop": {
+      "id": "category.tabletop",
+      "label": "Tabletop Games",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [
+        "tabletop.warhammer",
+        "tabletop.kill-team",
+        "tabletop.terrain",
+        "tabletop.wargames",
+        "tabletop.list-building",
+        "tabletop.tournaments",
+        "tabletop.lore",
+        "tabletop.ttrpg",
+        "tabletop.gm",
+        "tabletop.game-design",
+        "tabletop.print-play",
+        "tabletop.dice",
+        "tabletop.card-games",
+        "tabletop.boardgames",
+        "tabletop.solo"
+      ],
+      "sourceId": "tabletop"
+    },
+    "tabletop.warhammer": {
+      "id": "tabletop.warhammer",
+      "label": "Warhammer",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "tabletop.warhammer"
+    },
+    "tabletop.ttrpg": {
+      "id": "tabletop.ttrpg",
+      "label": "Tabletop RPGs",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "tabletop.ttrpg"
+    },
+    "tabletop.kill-team": {
+      "id": "tabletop.kill-team",
+      "label": "Skirmish Games",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "tabletop.kill-team"
+    },
+    "tabletop.terrain": {
+      "id": "tabletop.terrain",
+      "label": "Terrain Building",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "tabletop.terrain"
+    },
+    "tabletop.wargames": {
+      "id": "tabletop.wargames",
+      "label": "Historical Wargaming",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "tabletop.wargames"
+    },
+    "tabletop.list-building": {
+      "id": "tabletop.list-building",
+      "label": "List Building",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "tabletop.list-building"
+    },
+    "tabletop.tournaments": {
+      "id": "tabletop.tournaments",
+      "label": "Tournaments",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "tabletop.tournaments"
+    },
+    "tabletop.lore": {
+      "id": "tabletop.lore",
+      "label": "Setting and Lore",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "tabletop.lore"
+    },
+    "tabletop.gm": {
+      "id": "tabletop.gm",
+      "label": "Running a Game",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "tabletop.gm"
+    },
+    "tabletop.game-design": {
+      "id": "tabletop.game-design",
+      "label": "Game Design",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "tabletop.game-design"
+    },
+    "tabletop.print-play": {
+      "id": "tabletop.print-play",
+      "label": "Print and Play",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "tabletop.print-play"
+    },
+    "tabletop.dice": {
+      "id": "tabletop.dice",
+      "label": "Dice and Accessories",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "tabletop.dice"
+    },
+    "tabletop.card-games": {
+      "id": "tabletop.card-games",
+      "label": "Card Games",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "tabletop.card-games"
+    },
+    "tabletop.boardgames": {
+      "id": "tabletop.boardgames",
+      "label": "Board Games",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [
+        "tabletop.boardgames.cooperative",
+        "tabletop.boardgames.deckbuilding",
+        "tabletop.boardgames.worker-placement",
+        "tabletop.boardgames.abstract",
+        "tabletop.boardgames.party",
+        "tabletop.boardgames.solo"
+      ],
+      "sourceId": "tabletop.boardgames"
+    },
+    "tabletop.solo": {
+      "id": "tabletop.solo",
+      "label": "Solo Play",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "tabletop.solo"
+    },
+    "category.anime": {
+      "id": "category.anime",
+      "label": "Anime and Manga",
+      "icon": "screen",
+      "color": "#f9a8d4",
+      "children": [
+        "anime.mecha",
+        "anime.series",
+        "anime.films",
+        "anime.retro-anime",
+        "anime.industry",
+        "anime.subs-dubs",
+        "anime.japanese",
+        "anime.manga",
+        "anime.artbooks",
+        "anime.cels",
+        "anime.drawing",
+        "anime.doujin",
+        "anime.conventions",
+        "anime.merch",
+        "anime.jpop"
+      ],
+      "sourceId": "anime"
+    },
+    "anime.mecha": {
+      "id": "anime.mecha",
+      "label": "Mecha Anime",
+      "icon": "screen",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "anime.mecha"
+    },
+    "anime.manga": {
+      "id": "anime.manga",
+      "label": "Manga",
+      "icon": "screen",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "anime.manga"
+    },
+    "anime.series": {
+      "id": "anime.series",
+      "label": "Seasonal Watching",
+      "icon": "screen",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "anime.series"
+    },
+    "anime.films": {
+      "id": "anime.films",
+      "label": "Anime Films",
+      "icon": "screen",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "anime.films"
+    },
+    "anime.retro-anime": {
+      "id": "anime.retro-anime",
+      "label": "Pre-2000 Anime",
+      "icon": "screen",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "anime.retro-anime"
+    },
+    "anime.industry": {
+      "id": "anime.industry",
+      "label": "Studios and Staff",
+      "icon": "screen",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "anime.industry"
+    },
+    "anime.subs-dubs": {
+      "id": "anime.subs-dubs",
+      "label": "Subs and Dubs",
+      "icon": "screen",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "anime.subs-dubs"
+    },
+    "anime.japanese": {
+      "id": "anime.japanese",
+      "label": "Learning Japanese",
+      "icon": "screen",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "anime.japanese"
+    },
+    "anime.artbooks": {
+      "id": "anime.artbooks",
+      "label": "Art Books",
+      "icon": "screen",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "anime.artbooks"
+    },
+    "anime.cels": {
+      "id": "anime.cels",
+      "label": "Production Cels",
+      "icon": "screen",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "anime.cels"
+    },
+    "anime.drawing": {
+      "id": "anime.drawing",
+      "label": "Drawing in the Style",
+      "icon": "screen",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "anime.drawing"
+    },
+    "anime.doujin": {
+      "id": "anime.doujin",
+      "label": "Doujinshi and Fanwork",
+      "icon": "screen",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "anime.doujin"
+    },
+    "anime.conventions": {
+      "id": "anime.conventions",
+      "label": "Conventions",
+      "icon": "screen",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "anime.conventions"
+    },
+    "anime.merch": {
+      "id": "anime.merch",
+      "label": "Merchandise",
+      "icon": "screen",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "anime.merch"
+    },
+    "anime.jpop": {
+      "id": "anime.jpop",
+      "label": "Anime Music",
+      "icon": "screen",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "anime.jpop"
+    },
+    "category.film": {
+      "id": "category.film",
+      "label": "Film and Screen",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [
+        "film.horror",
+        "film.scifi",
+        "film.kaiju",
+        "film.animation",
+        "film.noir",
+        "film.docs",
+        "film.cinephilia",
+        "film.letterboxd",
+        "film.criticism",
+        "film.festivals",
+        "film.physical-media",
+        "film.soundtracks",
+        "film.home-cinema",
+        "film.projection",
+        "film.practical-fx"
+      ],
+      "sourceId": "film"
+    },
+    "film.horror": {
+      "id": "film.horror",
+      "label": "Horror",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [
+        "film.horror.slasher",
+        "film.horror.giallo",
+        "film.horror.folk",
+        "film.horror.cosmic",
+        "film.horror.body",
+        "film.horror.found-footage",
+        "film.horror.creature",
+        "film.horror.jhorror"
+      ],
+      "sourceId": "film.horror"
+    },
+    "film.physical-media": {
+      "id": "film.physical-media",
+      "label": "Physical Media",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.physical-media"
+    },
+    "film.scifi": {
+      "id": "film.scifi",
+      "label": "Science Fiction",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.scifi"
+    },
+    "film.kaiju": {
+      "id": "film.kaiju",
+      "label": "Kaiju and Tokusatsu",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.kaiju"
+    },
+    "film.animation": {
+      "id": "film.animation",
+      "label": "Animation",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.animation"
+    },
+    "film.noir": {
+      "id": "film.noir",
+      "label": "Noir and Crime",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.noir"
+    },
+    "film.docs": {
+      "id": "film.docs",
+      "label": "Documentary",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.docs"
+    },
+    "film.cinephilia": {
+      "id": "film.cinephilia",
+      "label": "Film History",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.cinephilia"
+    },
+    "film.letterboxd": {
+      "id": "film.letterboxd",
+      "label": "Logging and Lists",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.letterboxd"
+    },
+    "film.criticism": {
+      "id": "film.criticism",
+      "label": "Writing About Film",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.criticism"
+    },
+    "film.festivals": {
+      "id": "film.festivals",
+      "label": "Festivals",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.festivals"
+    },
+    "film.soundtracks": {
+      "id": "film.soundtracks",
+      "label": "Soundtracks",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.soundtracks"
+    },
+    "film.home-cinema": {
+      "id": "film.home-cinema",
+      "label": "Home Cinema",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.home-cinema"
+    },
+    "film.projection": {
+      "id": "film.projection",
+      "label": "Film Projection",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.projection"
+    },
+    "film.practical-fx": {
+      "id": "film.practical-fx",
+      "label": "Practical Effects",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.practical-fx"
+    },
+    "category.video": {
+      "id": "category.video",
+      "label": "Video Craft",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [
+        "video.scripting",
+        "video.videography",
+        "video.lighting",
+        "video.macro",
+        "video.timelapse",
+        "video.audio-capture",
+        "video.voiceover",
+        "video.youtube",
+        "video.editing",
+        "video.colour",
+        "video.motion-graphics",
+        "video.thumbnails",
+        "video.shorts",
+        "video.streaming",
+        "video.podcasting"
+      ],
+      "sourceId": "video"
+    },
+    "video.youtube": {
+      "id": "video.youtube",
+      "label": "YouTube Channel",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.youtube"
+    },
+    "video.editing": {
+      "id": "video.editing",
+      "label": "Video Editing",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [
+        "video.editing.assembly",
+        "video.editing.pacing",
+        "video.editing.b-roll",
+        "video.editing.sound-mix",
+        "video.editing.titles",
+        "video.editing.captions",
+        "video.editing.proxies"
+      ],
+      "sourceId": "video.editing"
+    },
+    "video.videography": {
+      "id": "video.videography",
+      "label": "Videography",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.videography"
+    },
+    "video.lighting": {
+      "id": "video.lighting",
+      "label": "Lighting a Scene",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.lighting"
+    },
+    "video.audio-capture": {
+      "id": "video.audio-capture",
+      "label": "Audio Capture",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.audio-capture"
+    },
+    "video.voiceover": {
+      "id": "video.voiceover",
+      "label": "Voiceover",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.voiceover"
+    },
+    "video.scripting": {
+      "id": "video.scripting",
+      "label": "Scripting",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.scripting"
+    },
+    "video.thumbnails": {
+      "id": "video.thumbnails",
+      "label": "Thumbnails and Titles",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.thumbnails"
+    },
+    "video.colour": {
+      "id": "video.colour",
+      "label": "Colour Grading",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.colour"
+    },
+    "video.motion-graphics": {
+      "id": "video.motion-graphics",
+      "label": "Motion Graphics",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.motion-graphics"
+    },
+    "video.macro": {
+      "id": "video.macro",
+      "label": "Macro and Stacking",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.macro"
+    },
+    "video.timelapse": {
+      "id": "video.timelapse",
+      "label": "Timelapse",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.timelapse"
+    },
+    "video.streaming": {
+      "id": "video.streaming",
+      "label": "Live Streaming",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.streaming"
+    },
+    "video.shorts": {
+      "id": "video.shorts",
+      "label": "Short Form",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.shorts"
+    },
+    "video.podcasting": {
+      "id": "video.podcasting",
+      "label": "Podcasting",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.podcasting"
+    },
+    "category.starwars": {
+      "id": "category.starwars",
+      "label": "Star Wars and Props",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [
+        "starwars.props",
+        "starwars.pixel-saber",
+        "starwars.saber-config",
+        "starwars.soundfonts",
+        "starwars.blade-build",
+        "starwars.hilt-machining",
+        "starwars.chassis-design",
+        "starwars.dueling",
+        "starwars.costuming",
+        "starwars.conventions",
+        "starwars.canon",
+        "starwars.books",
+        "starwars.vintage-figures",
+        "starwars.model-kits",
+        "starwars.prop-photography"
+      ],
+      "sourceId": "starwars"
+    },
+    "starwars.props": {
+      "id": "starwars.props",
+      "label": "Prop Replicas",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [
+        "starwars.props.saber",
+        "starwars.props.blaster",
+        "starwars.props.helmet",
+        "starwars.props.armour",
+        "starwars.props.greeblies",
+        "starwars.props.finishing"
+      ],
+      "sourceId": "starwars.props"
+    },
+    "starwars.pixel-saber": {
+      "id": "starwars.pixel-saber",
+      "label": "Pixel Saber",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [],
+      "sourceId": "starwars.pixel-saber"
+    },
+    "starwars.saber-config": {
+      "id": "starwars.saber-config",
+      "label": "Saber Config Files",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [],
+      "sourceId": "starwars.saber-config"
+    },
+    "starwars.soundfonts": {
+      "id": "starwars.soundfonts",
+      "label": "Sound Fonts",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [],
+      "sourceId": "starwars.soundfonts"
+    },
+    "starwars.blade-build": {
+      "id": "starwars.blade-build",
+      "label": "Blade Assembly",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [],
+      "sourceId": "starwars.blade-build"
+    },
+    "starwars.hilt-machining": {
+      "id": "starwars.hilt-machining",
+      "label": "Hilt Machining",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [],
+      "sourceId": "starwars.hilt-machining"
+    },
+    "starwars.chassis-design": {
+      "id": "starwars.chassis-design",
+      "label": "Chassis Design",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [],
+      "sourceId": "starwars.chassis-design"
+    },
+    "starwars.dueling": {
+      "id": "starwars.dueling",
+      "label": "Saber Choreography",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [],
+      "sourceId": "starwars.dueling"
+    },
+    "starwars.costuming": {
+      "id": "starwars.costuming",
+      "label": "Costuming",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [],
+      "sourceId": "starwars.costuming"
+    },
+    "starwars.conventions": {
+      "id": "starwars.conventions",
+      "label": "Conventions",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [],
+      "sourceId": "starwars.conventions"
+    },
+    "starwars.canon": {
+      "id": "starwars.canon",
+      "label": "The Films and Series",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [],
+      "sourceId": "starwars.canon"
+    },
+    "starwars.books": {
+      "id": "starwars.books",
+      "label": "Books and Comics",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [],
+      "sourceId": "starwars.books"
+    },
+    "starwars.vintage-figures": {
+      "id": "starwars.vintage-figures",
+      "label": "Vintage Figures",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [],
+      "sourceId": "starwars.vintage-figures"
+    },
+    "starwars.model-kits": {
+      "id": "starwars.model-kits",
+      "label": "Star Wars Model Kits",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [],
+      "sourceId": "starwars.model-kits"
+    },
+    "starwars.prop-photography": {
+      "id": "starwars.prop-photography",
+      "label": "Prop Photography",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [],
+      "sourceId": "starwars.prop-photography"
+    },
+    "category.radio": {
+      "id": "category.radio",
+      "label": "Radio and Mesh",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [
+        "radio.ham",
+        "radio.meshtastic",
+        "radio.node-build",
+        "radio.mesh-admin",
+        "radio.repeater",
+        "radio.antennas",
+        "radio.propagation",
+        "radio.digital-modes",
+        "radio.sdr",
+        "radio.satellites",
+        "radio.hf-station",
+        "radio.pota",
+        "radio.contesting",
+        "radio.qsl",
+        "radio.morse"
+      ],
+      "sourceId": "radio"
+    },
+    "radio.ham": {
+      "id": "radio.ham",
+      "label": "Ham Radio",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "radio.ham"
+    },
+    "radio.meshtastic": {
+      "id": "radio.meshtastic",
+      "label": "Meshtastic",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "radio.meshtastic"
+    },
+    "radio.node-build": {
+      "id": "radio.node-build",
+      "label": "Node Building",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "radio.node-build"
+    },
+    "radio.mesh-admin": {
+      "id": "radio.mesh-admin",
+      "label": "Mesh Configuration",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "radio.mesh-admin"
+    },
+    "radio.repeater": {
+      "id": "radio.repeater",
+      "label": "Solar Repeater",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "radio.repeater"
+    },
+    "radio.antennas": {
+      "id": "radio.antennas",
+      "label": "Antennas",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [
+        "radio.antennas.dipole",
+        "radio.antennas.vertical",
+        "radio.antennas.yagi",
+        "radio.antennas.loop",
+        "radio.antennas.swr",
+        "radio.antennas.feedline"
+      ],
+      "sourceId": "radio.antennas"
+    },
+    "radio.propagation": {
+      "id": "radio.propagation",
+      "label": "Propagation",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "radio.propagation"
+    },
+    "radio.digital-modes": {
+      "id": "radio.digital-modes",
+      "label": "Digital Modes",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "radio.digital-modes"
+    },
+    "radio.sdr": {
+      "id": "radio.sdr",
+      "label": "SDR Listening",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "radio.sdr"
+    },
+    "radio.satellites": {
+      "id": "radio.satellites",
+      "label": "Satellite Passes",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "radio.satellites"
+    },
+    "radio.hf-station": {
+      "id": "radio.hf-station",
+      "label": "HF Station",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "radio.hf-station"
+    },
+    "radio.pota": {
+      "id": "radio.pota",
+      "label": "POTA and SOTA",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "radio.pota"
+    },
+    "radio.contesting": {
+      "id": "radio.contesting",
+      "label": "Contesting",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "radio.contesting"
+    },
+    "radio.qsl": {
+      "id": "radio.qsl",
+      "label": "QSL Cards",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "radio.qsl"
+    },
+    "radio.morse": {
+      "id": "radio.morse",
+      "label": "Morse Code",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "radio.morse"
+    },
+    "category.maker": {
+      "id": "category.maker",
+      "label": "Electronics and Making",
+      "icon": "tools",
+      "color": "#fca5a5",
+      "children": [
+        "maker.arduino",
+        "maker.esp32",
+        "maker.sensors",
+        "maker.addressable-led",
+        "maker.power",
+        "maker.soldering-bench",
+        "maker.test-gear",
+        "maker.pcb-design",
+        "maker.keyboards",
+        "maker.repair",
+        "maker.robotics",
+        "maker.wearables",
+        "maker.home-automation",
+        "maker.cad",
+        "maker.printer-tuning",
+        "maker.enclosures",
+        "maker.laser-cnc"
+      ],
+      "sourceId": "maker"
+    },
+    "maker.arduino": {
+      "id": "maker.arduino",
+      "label": "Arduino",
+      "icon": "code",
+      "color": "#fca5a5",
+      "children": [
+        "maker.arduino.simulation",
+        "maker.arduino.inputs",
+        "maker.arduino.sensors",
+        "maker.arduino.feedback",
+        "maker.arduino.debugging",
+        "maker.arduino.enclosures"
+      ],
+      "sourceId": "maker.arduino"
+    },
+    "maker.addressable-led": {
+      "id": "maker.addressable-led",
+      "label": "Addressable LEDs",
+      "icon": "tools",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.addressable-led"
+    },
+    "maker.esp32": {
+      "id": "maker.esp32",
+      "label": "ESP32 and RP2040",
+      "icon": "tools",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.esp32"
+    },
+    "maker.sensors": {
+      "id": "maker.sensors",
+      "label": "Sensors",
+      "icon": "tools",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.sensors"
+    },
+    "maker.power": {
+      "id": "maker.power",
+      "label": "Batteries and Power",
+      "icon": "tools",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.power"
+    },
+    "maker.soldering-bench": {
+      "id": "maker.soldering-bench",
+      "label": "Soldering Bench",
+      "icon": "tools",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.soldering-bench"
+    },
+    "maker.test-gear": {
+      "id": "maker.test-gear",
+      "label": "Test Gear",
+      "icon": "tools",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.test-gear"
+    },
+    "maker.pcb-design": {
+      "id": "maker.pcb-design",
+      "label": "PCB Design",
+      "icon": "tools",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.pcb-design"
+    },
+    "maker.repair": {
+      "id": "maker.repair",
+      "label": "Repair and Teardown",
+      "icon": "tools",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.repair"
+    },
+    "maker.robotics": {
+      "id": "maker.robotics",
+      "label": "Robotics",
+      "icon": "tools",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.robotics"
+    },
+    "maker.wearables": {
+      "id": "maker.wearables",
+      "label": "Wearable Electronics",
+      "icon": "tools",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.wearables"
+    },
+    "maker.home-automation": {
+      "id": "maker.home-automation",
+      "label": "Home Automation",
+      "icon": "tools",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.home-automation"
+    },
+    "maker.cad": {
+      "id": "maker.cad",
+      "label": "CAD Modelling",
+      "icon": "tools",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.cad"
+    },
+    "maker.printer-tuning": {
+      "id": "maker.printer-tuning",
+      "label": "Printer Tuning",
+      "icon": "tools",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.printer-tuning"
+    },
+    "maker.enclosures": {
+      "id": "maker.enclosures",
+      "label": "Enclosure Design",
+      "icon": "tools",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.enclosures"
+    },
+    "maker.laser-cnc": {
+      "id": "maker.laser-cnc",
+      "label": "Laser and CNC",
+      "icon": "tools",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.laser-cnc"
+    },
+    "maker.keyboards": {
+      "id": "maker.keyboards",
+      "label": "Custom Keyboards",
+      "icon": "tools",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.keyboards"
+    },
+    "category.drone": {
+      "id": "category.drone",
+      "label": "Drones and Aerial",
+      "icon": "drone",
+      "color": "#7dd3fc",
+      "children": [
+        "drone.fpv",
+        "drone.simulator",
+        "drone.freestyle",
+        "drone.racing",
+        "drone.micro",
+        "drone.build",
+        "drone.betaflight",
+        "drone.lipo",
+        "drone.repair",
+        "drone.video-link",
+        "drone.regulations",
+        "drone.cinematic",
+        "drone.aerial-photo",
+        "drone.mapping"
+      ],
+      "sourceId": "drone"
+    },
+    "drone.fpv": {
+      "id": "drone.fpv",
+      "label": "FPV Flying",
+      "icon": "drone",
+      "color": "#7dd3fc",
+      "children": [],
+      "sourceId": "drone.fpv"
+    },
+    "drone.cinematic": {
+      "id": "drone.cinematic",
+      "label": "Cinematic Drone",
+      "icon": "drone",
+      "color": "#7dd3fc",
+      "children": [],
+      "sourceId": "drone.cinematic"
+    },
+    "drone.simulator": {
+      "id": "drone.simulator",
+      "label": "Simulator Practice",
+      "icon": "drone",
+      "color": "#7dd3fc",
+      "children": [],
+      "sourceId": "drone.simulator"
+    },
+    "drone.freestyle": {
+      "id": "drone.freestyle",
+      "label": "Freestyle",
+      "icon": "drone",
+      "color": "#7dd3fc",
+      "children": [],
+      "sourceId": "drone.freestyle"
+    },
+    "drone.racing": {
+      "id": "drone.racing",
+      "label": "Drone Racing",
+      "icon": "drone",
+      "color": "#7dd3fc",
+      "children": [],
+      "sourceId": "drone.racing"
+    },
+    "drone.micro": {
+      "id": "drone.micro",
+      "label": "Tiny Whoops",
+      "icon": "drone",
+      "color": "#7dd3fc",
+      "children": [],
+      "sourceId": "drone.micro"
+    },
+    "drone.build": {
+      "id": "drone.build",
+      "label": "Building a Quad",
+      "icon": "drone",
+      "color": "#7dd3fc",
+      "children": [],
+      "sourceId": "drone.build"
+    },
+    "drone.betaflight": {
+      "id": "drone.betaflight",
+      "label": "Flight Controller Tuning",
+      "icon": "drone",
+      "color": "#7dd3fc",
+      "children": [],
+      "sourceId": "drone.betaflight"
+    },
+    "drone.lipo": {
+      "id": "drone.lipo",
+      "label": "LiPo Safety",
+      "icon": "drone",
+      "color": "#7dd3fc",
+      "children": [],
+      "sourceId": "drone.lipo"
+    },
+    "drone.repair": {
+      "id": "drone.repair",
+      "label": "Field Repair",
+      "icon": "drone",
+      "color": "#7dd3fc",
+      "children": [],
+      "sourceId": "drone.repair"
+    },
+    "drone.video-link": {
+      "id": "drone.video-link",
+      "label": "Video Link and Antennas",
+      "icon": "drone",
+      "color": "#7dd3fc",
+      "children": [],
+      "sourceId": "drone.video-link"
+    },
+    "drone.regulations": {
+      "id": "drone.regulations",
+      "label": "Rules and Licensing",
+      "icon": "drone",
+      "color": "#7dd3fc",
+      "children": [],
+      "sourceId": "drone.regulations"
+    },
+    "drone.aerial-photo": {
+      "id": "drone.aerial-photo",
+      "label": "Aerial Photography",
+      "icon": "drone",
+      "color": "#7dd3fc",
+      "children": [],
+      "sourceId": "drone.aerial-photo"
+    },
+    "drone.mapping": {
+      "id": "drone.mapping",
+      "label": "Mapping and Survey",
+      "icon": "drone",
+      "color": "#7dd3fc",
+      "children": [],
+      "sourceId": "drone.mapping"
+    },
+    "category.astro": {
+      "id": "category.astro",
+      "label": "Night Sky",
+      "icon": "star",
+      "color": "#a5b4fc",
+      "children": [
+        "astro.visual",
+        "astro.telescopes",
+        "astro.scope-building",
+        "astro.star-hopping",
+        "astro.solar",
+        "astro.meteors",
+        "astro.satellite-spot",
+        "astro.astrophoto",
+        "astro.mounts",
+        "astro.guiding",
+        "astro.stacking",
+        "astro.planetary",
+        "astro.deep-sky",
+        "astro.dark-sky"
+      ],
+      "sourceId": "astro"
+    },
+    "astro.astrophoto": {
+      "id": "astro.astrophoto",
+      "label": "Astrophotography",
+      "icon": "star",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "astro.astrophoto"
+    },
+    "astro.visual": {
+      "id": "astro.visual",
+      "label": "Visual Observing",
+      "icon": "star",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "astro.visual"
+    },
+    "astro.telescopes": {
+      "id": "astro.telescopes",
+      "label": "Telescopes",
+      "icon": "star",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "astro.telescopes"
+    },
+    "astro.scope-building": {
+      "id": "astro.scope-building",
+      "label": "Building a Scope",
+      "icon": "star",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "astro.scope-building"
+    },
+    "astro.star-hopping": {
+      "id": "astro.star-hopping",
+      "label": "Star Hopping",
+      "icon": "star",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "astro.star-hopping"
+    },
+    "astro.solar": {
+      "id": "astro.solar",
+      "label": "Solar Observing",
+      "icon": "star",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "astro.solar"
+    },
+    "astro.meteors": {
+      "id": "astro.meteors",
+      "label": "Meteor Watching",
+      "icon": "star",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "astro.meteors"
+    },
+    "astro.satellite-spot": {
+      "id": "astro.satellite-spot",
+      "label": "Satellite Spotting",
+      "icon": "star",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "astro.satellite-spot"
+    },
+    "astro.mounts": {
+      "id": "astro.mounts",
+      "label": "Tracking Mounts",
+      "icon": "star",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "astro.mounts"
+    },
+    "astro.guiding": {
+      "id": "astro.guiding",
+      "label": "Autoguiding",
+      "icon": "star",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "astro.guiding"
+    },
+    "astro.stacking": {
+      "id": "astro.stacking",
+      "label": "Stacking and Processing",
+      "icon": "star",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "astro.stacking"
+    },
+    "astro.planetary": {
+      "id": "astro.planetary",
+      "label": "Planetary Imaging",
+      "icon": "star",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "astro.planetary"
+    },
+    "astro.deep-sky": {
+      "id": "astro.deep-sky",
+      "label": "Deep Sky",
+      "icon": "star",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "astro.deep-sky"
+    },
+    "astro.dark-sky": {
+      "id": "astro.dark-sky",
+      "label": "Dark Sky Sites",
+      "icon": "star",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "astro.dark-sky"
+    },
+    "category.music": {
+      "id": "category.music",
+      "label": "Music and Sound",
+      "icon": "headphones",
+      "color": "#fca5a5",
+      "children": [
+        "music.synths",
+        "music.modular",
+        "music.pedals",
+        "music.guitar",
+        "music.theory",
+        "music.live",
+        "music.recording",
+        "music.mixing",
+        "music.sampling",
+        "music.field-recording",
+        "music.chiptune",
+        "music.dj",
+        "music.vinyl",
+        "music.hifi",
+        "music.piano"
+      ],
+      "sourceId": "music"
+    },
+    "music.synths": {
+      "id": "music.synths",
+      "label": "Synthesizers",
+      "icon": "headphones",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "music.synths"
+    },
+    "music.vinyl": {
+      "id": "music.vinyl",
+      "label": "Vinyl Collecting",
+      "icon": "headphones",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "music.vinyl"
+    },
+    "music.modular": {
+      "id": "music.modular",
+      "label": "Eurorack",
+      "icon": "headphones",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "music.modular"
+    },
+    "music.pedals": {
+      "id": "music.pedals",
+      "label": "DIY Guitar Pedals",
+      "icon": "guitar",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "music.pedals"
+    },
+    "music.guitar": {
+      "id": "music.guitar",
+      "label": "Guitar",
+      "icon": "guitar",
+      "color": "#fca5a5",
+      "children": [
+        "music.guitar.rhythm",
+        "music.guitar.fingerstyle",
+        "music.guitar.ear-training",
+        "music.guitar.songwriting",
+        "music.guitar.improvisation",
+        "music.guitar.ensemble"
+      ],
+      "sourceId": "music.guitar"
+    },
+    "music.theory": {
+      "id": "music.theory",
+      "label": "Music Theory",
+      "icon": "headphones",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "music.theory"
+    },
+    "music.live": {
+      "id": "music.live",
+      "label": "Playing Live",
+      "icon": "headphones",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "music.live"
+    },
+    "music.recording": {
+      "id": "music.recording",
+      "label": "Home Recording",
+      "icon": "headphones",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "music.recording"
+    },
+    "music.mixing": {
+      "id": "music.mixing",
+      "label": "Mixing",
+      "icon": "headphones",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "music.mixing"
+    },
+    "music.sampling": {
+      "id": "music.sampling",
+      "label": "Sampling",
+      "icon": "headphones",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "music.sampling"
+    },
+    "music.field-recording": {
+      "id": "music.field-recording",
+      "label": "Field Recording",
+      "icon": "headphones",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "music.field-recording"
+    },
+    "music.chiptune": {
+      "id": "music.chiptune",
+      "label": "Chiptune",
+      "icon": "headphones",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "music.chiptune"
+    },
+    "music.dj": {
+      "id": "music.dj",
+      "label": "DJing",
+      "icon": "headphones",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "music.dj"
+    },
+    "music.hifi": {
+      "id": "music.hifi",
+      "label": "Hi-Fi",
+      "icon": "headphones",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "music.hifi"
+    },
+    "music.piano": {
+      "id": "music.piano",
+      "label": "Piano",
+      "icon": "headphones",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "music.piano"
+    },
+    "category.retro": {
+      "id": "category.retro",
+      "label": "Retro Tech",
+      "icon": "screen",
+      "color": "#c4b5fd",
+      "children": [
+        "retro.consoles",
+        "retro.crt",
+        "retro.arcade",
+        "retro.pinball",
+        "retro.modding",
+        "retro.recapping",
+        "retro.cartridges",
+        "retro.repro-detect",
+        "retro.handhelds",
+        "retro.emulation",
+        "retro.computers",
+        "retro.floppy",
+        "retro.demoscene",
+        "retro.mechanical-kb"
+      ],
+      "sourceId": "retro"
+    },
+    "retro.consoles": {
+      "id": "retro.consoles",
+      "label": "Retro Consoles",
+      "icon": "screen",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "retro.consoles"
+    },
+    "retro.crt": {
+      "id": "retro.crt",
+      "label": "CRT Displays",
+      "icon": "screen",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "retro.crt"
+    },
+    "retro.arcade": {
+      "id": "retro.arcade",
+      "label": "Arcade Cabinets",
+      "icon": "screen",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "retro.arcade"
+    },
+    "retro.pinball": {
+      "id": "retro.pinball",
+      "label": "Pinball",
+      "icon": "screen",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "retro.pinball"
+    },
+    "retro.modding": {
+      "id": "retro.modding",
+      "label": "Console Modding",
+      "icon": "screen",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "retro.modding"
+    },
+    "retro.recapping": {
+      "id": "retro.recapping",
+      "label": "Recapping",
+      "icon": "screen",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "retro.recapping"
+    },
+    "retro.cartridges": {
+      "id": "retro.cartridges",
+      "label": "Cartridge Collecting",
+      "icon": "screen",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "retro.cartridges"
+    },
+    "retro.repro-detect": {
+      "id": "retro.repro-detect",
+      "label": "Repro Detection",
+      "icon": "screen",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "retro.repro-detect"
+    },
+    "retro.handhelds": {
+      "id": "retro.handhelds",
+      "label": "Handhelds",
+      "icon": "screen",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "retro.handhelds"
+    },
+    "retro.emulation": {
+      "id": "retro.emulation",
+      "label": "Emulation",
+      "icon": "screen",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "retro.emulation"
+    },
+    "retro.computers": {
+      "id": "retro.computers",
+      "label": "Vintage Computers",
+      "icon": "screen",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "retro.computers"
+    },
+    "retro.floppy": {
+      "id": "retro.floppy",
+      "label": "Disk Preservation",
+      "icon": "screen",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "retro.floppy"
+    },
+    "retro.demoscene": {
+      "id": "retro.demoscene",
+      "label": "Demoscene",
+      "icon": "screen",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "retro.demoscene"
+    },
+    "retro.mechanical-kb": {
+      "id": "retro.mechanical-kb",
+      "label": "Mechanical Keyboards",
+      "icon": "screen",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "retro.mechanical-kb"
+    },
+    "category.game": {
+      "id": "category.game",
+      "label": "Video Games",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [
+        "game.arpg",
+        "game.jrpg",
+        "game.build-crafting",
+        "game.roguelike",
+        "game.strategy",
+        "game.speedrunning",
+        "game.preservation",
+        "game.modding",
+        "game.gamedev",
+        "game.mmo",
+        "game.co-op",
+        "game.fighting",
+        "game.rhythm",
+        "game.controllers",
+        "game.pc-building",
+        "game.simracing",
+        "game.flightsim",
+        "game.vr",
+        "game.photomode"
+      ],
+      "sourceId": "game"
+    },
+    "game.arpg": {
+      "id": "game.arpg",
+      "label": "Action RPGs",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.arpg"
+    },
+    "game.build-crafting": {
+      "id": "game.build-crafting",
+      "label": "Build Crafting",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.build-crafting"
+    },
+    "game.roguelike": {
+      "id": "game.roguelike",
+      "label": "Roguelikes",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.roguelike"
+    },
+    "game.strategy": {
+      "id": "game.strategy",
+      "label": "Strategy Games",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.strategy"
+    },
+    "game.speedrunning": {
+      "id": "game.speedrunning",
+      "label": "Speedrunning",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.speedrunning"
+    },
+    "game.preservation": {
+      "id": "game.preservation",
+      "label": "Game Preservation",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.preservation"
+    },
+    "game.modding": {
+      "id": "game.modding",
+      "label": "Game Modding",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.modding"
+    },
+    "game.gamedev": {
+      "id": "game.gamedev",
+      "label": "Game Development",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.gamedev"
+    },
+    "game.co-op": {
+      "id": "game.co-op",
+      "label": "Playing With Friends",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.co-op"
+    },
+    "game.controllers": {
+      "id": "game.controllers",
+      "label": "Controller Modding",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.controllers"
+    },
+    "game.pc-building": {
+      "id": "game.pc-building",
+      "label": "PC Building",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [
+        "game.pc-building.parts-picking",
+        "game.pc-building.small-form-factor",
+        "game.pc-building.silent-builds",
+        "game.pc-building.undervolting",
+        "game.pc-building.overclocking",
+        "game.pc-building.benchmarking",
+        "game.pc-building.watercooling",
+        "game.pc-building.case-modding",
+        "game.pc-building.cable-management"
+      ],
+      "sourceId": "game.pc-building"
+    },
+    "game.simracing": {
+      "id": "game.simracing",
+      "label": "Sim Racing",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.simracing"
+    },
+    "game.flightsim": {
+      "id": "game.flightsim",
+      "label": "Flight Simulation",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.flightsim"
+    },
+    "game.photomode": {
+      "id": "game.photomode",
+      "label": "In-Game Photography",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.photomode"
+    },
+    "game.jrpg": {
+      "id": "game.jrpg",
+      "label": "JRPGs",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.jrpg"
+    },
+    "game.fighting": {
+      "id": "game.fighting",
+      "label": "Fighting Games",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.fighting"
+    },
+    "game.rhythm": {
+      "id": "game.rhythm",
+      "label": "Rhythm Games",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.rhythm"
+    },
+    "game.mmo": {
+      "id": "game.mmo",
+      "label": "Online Worlds",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.mmo"
+    },
+    "game.vr": {
+      "id": "game.vr",
+      "label": "VR and Simulation",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.vr"
+    },
+    "category.cosplay": {
+      "id": "category.cosplay",
+      "label": "Cosplay",
+      "icon": "mask",
+      "color": "#f9a8d4",
+      "children": [
+        "cosplay.armour",
+        "cosplay.foam",
+        "cosplay.worbla",
+        "cosplay.3d-printed",
+        "cosplay.molding",
+        "cosplay.patterning",
+        "cosplay.sewing",
+        "cosplay.wigs",
+        "cosplay.makeup",
+        "cosplay.weathering",
+        "cosplay.lighting",
+        "cosplay.comfort",
+        "cosplay.competition",
+        "cosplay.photoshoot"
+      ],
+      "sourceId": "cosplay"
+    },
+    "cosplay.armour": {
+      "id": "cosplay.armour",
+      "label": "Armour Building",
+      "icon": "mask",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "cosplay.armour"
+    },
+    "cosplay.foam": {
+      "id": "cosplay.foam",
+      "label": "EVA Foam",
+      "icon": "mask",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "cosplay.foam"
+    },
+    "cosplay.worbla": {
+      "id": "cosplay.worbla",
+      "label": "Thermoplastics",
+      "icon": "mask",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "cosplay.worbla"
+    },
+    "cosplay.3d-printed": {
+      "id": "cosplay.3d-printed",
+      "label": "Printed Props",
+      "icon": "mask",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "cosplay.3d-printed"
+    },
+    "cosplay.molding": {
+      "id": "cosplay.molding",
+      "label": "Casting for Costume",
+      "icon": "mask",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "cosplay.molding"
+    },
+    "cosplay.patterning": {
+      "id": "cosplay.patterning",
+      "label": "Patterning",
+      "icon": "mask",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "cosplay.patterning"
+    },
+    "cosplay.sewing": {
+      "id": "cosplay.sewing",
+      "label": "Sewing",
+      "icon": "mask",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "cosplay.sewing"
+    },
+    "cosplay.wigs": {
+      "id": "cosplay.wigs",
+      "label": "Wig Styling",
+      "icon": "mask",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "cosplay.wigs"
+    },
+    "cosplay.makeup": {
+      "id": "cosplay.makeup",
+      "label": "Makeup and Prosthetics",
+      "icon": "mask",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "cosplay.makeup"
+    },
+    "cosplay.weathering": {
+      "id": "cosplay.weathering",
+      "label": "Costume Weathering",
+      "icon": "mask",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "cosplay.weathering"
+    },
+    "cosplay.lighting": {
+      "id": "cosplay.lighting",
+      "label": "Costume Lighting",
+      "icon": "mask",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "cosplay.lighting"
+    },
+    "cosplay.comfort": {
+      "id": "cosplay.comfort",
+      "label": "Wearability",
+      "icon": "mask",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "cosplay.comfort"
+    },
+    "cosplay.competition": {
+      "id": "cosplay.competition",
+      "label": "Cosplay Competition",
+      "icon": "mask",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "cosplay.competition"
+    },
+    "cosplay.photoshoot": {
+      "id": "cosplay.photoshoot",
+      "label": "Cosplay Photography",
+      "icon": "mask",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "cosplay.photoshoot"
+    },
+    "category.coffee": {
+      "id": "category.coffee",
+      "label": "Coffee",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [
+        "coffee.espresso",
+        "coffee.grinder",
+        "coffee.brew-ratios",
+        "coffee.water",
+        "coffee.milk",
+        "coffee.latte-art",
+        "coffee.machine-mods",
+        "coffee.maintenance",
+        "coffee.pourover",
+        "coffee.cold-brew",
+        "coffee.roasting",
+        "coffee.green-beans",
+        "coffee.cupping",
+        "coffee.cafes"
+      ],
+      "sourceId": "coffee"
+    },
+    "coffee.espresso": {
+      "id": "coffee.espresso",
+      "label": "Espresso",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [
+        "coffee.espresso.dialling",
+        "coffee.espresso.puck-prep",
+        "coffee.espresso.tasting",
+        "coffee.espresso.milk-drinks",
+        "coffee.espresso.brew-journal",
+        "coffee.espresso.bean-comparison"
+      ],
+      "sourceId": "coffee.espresso"
+    },
+    "coffee.roasting": {
+      "id": "coffee.roasting",
+      "label": "Home Roasting",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "coffee.roasting"
+    },
+    "coffee.grinder": {
+      "id": "coffee.grinder",
+      "label": "The Grinder",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "coffee.grinder"
+    },
+    "coffee.brew-ratios": {
+      "id": "coffee.brew-ratios",
+      "label": "Dialling In",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "coffee.brew-ratios"
+    },
+    "coffee.water": {
+      "id": "coffee.water",
+      "label": "Water Chemistry",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "coffee.water"
+    },
+    "coffee.milk": {
+      "id": "coffee.milk",
+      "label": "Milk Texturing",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "coffee.milk"
+    },
+    "coffee.latte-art": {
+      "id": "coffee.latte-art",
+      "label": "Latte Art",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "coffee.latte-art"
+    },
+    "coffee.machine-mods": {
+      "id": "coffee.machine-mods",
+      "label": "Machine Modding",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "coffee.machine-mods"
+    },
+    "coffee.maintenance": {
+      "id": "coffee.maintenance",
+      "label": "Descaling and Repair",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "coffee.maintenance"
+    },
+    "coffee.pourover": {
+      "id": "coffee.pourover",
+      "label": "Pour Over",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "coffee.pourover"
+    },
+    "coffee.cold-brew": {
+      "id": "coffee.cold-brew",
+      "label": "Cold Brew",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "coffee.cold-brew"
+    },
+    "coffee.green-beans": {
+      "id": "coffee.green-beans",
+      "label": "Green Bean Sourcing",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "coffee.green-beans"
+    },
+    "coffee.cupping": {
+      "id": "coffee.cupping",
+      "label": "Cupping and Tasting",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "coffee.cupping"
+    },
+    "coffee.cafes": {
+      "id": "coffee.cafes",
+      "label": "Cafe Hunting",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "coffee.cafes"
+    },
+    "category.book": {
+      "id": "category.book",
+      "label": "Reading and Books",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [
+        "book.fiction",
+        "book.scifi",
+        "book.comics",
+        "book.zines",
+        "book.libraries",
+        "book.nonfiction",
+        "book.translation",
+        "book.collecting",
+        "book.bookbinding",
+        "book.marginalia",
+        "book.poetry",
+        "book.rereading",
+        "book.clubs",
+        "book.audiobooks"
+      ],
+      "sourceId": "book"
+    },
+    "book.fiction": {
+      "id": "book.fiction",
+      "label": "Fiction",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [
+        "book.fiction.mystery",
+        "book.fiction.horror",
+        "book.fiction.short-stories",
+        "book.fiction.literary",
+        "book.fiction.translated",
+        "book.fiction.reading-log",
+        "book.fiction.rereads",
+        "book.fiction.epics",
+        "book.fiction.romance",
+        "book.fiction.historical"
+      ],
+      "sourceId": "book.fiction"
+    },
+    "book.nonfiction": {
+      "id": "book.nonfiction",
+      "label": "Nonfiction",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.nonfiction"
+    },
+    "book.scifi": {
+      "id": "book.scifi",
+      "label": "Sci-Fi and Fantasy",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.scifi"
+    },
+    "book.comics": {
+      "id": "book.comics",
+      "label": "Comics and Graphic Novels",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.comics"
+    },
+    "book.poetry": {
+      "id": "book.poetry",
+      "label": "Poetry",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.poetry"
+    },
+    "book.collecting": {
+      "id": "book.collecting",
+      "label": "Book Collecting",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.collecting"
+    },
+    "book.bookbinding": {
+      "id": "book.bookbinding",
+      "label": "Bookbinding",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.bookbinding"
+    },
+    "book.marginalia": {
+      "id": "book.marginalia",
+      "label": "Annotation and Marginalia",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.marginalia"
+    },
+    "book.clubs": {
+      "id": "book.clubs",
+      "label": "Book Clubs",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.clubs"
+    },
+    "book.audiobooks": {
+      "id": "book.audiobooks",
+      "label": "Audiobooks",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.audiobooks"
+    },
+    "book.zines": {
+      "id": "book.zines",
+      "label": "Zines",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.zines"
+    },
+    "book.libraries": {
+      "id": "book.libraries",
+      "label": "Libraries and Archives",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.libraries"
+    },
+    "book.rereading": {
+      "id": "book.rereading",
+      "label": "Rereading",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.rereading"
+    },
+    "book.translation": {
+      "id": "book.translation",
+      "label": "Reading in Translation",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.translation"
+    },
+    "category.garden": {
+      "id": "category.garden",
+      "label": "Gardening",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [
+        "garden.houseplants",
+        "garden.succulents",
+        "garden.orchids",
+        "garden.propagation",
+        "garden.bonsai",
+        "garden.seed-saving",
+        "garden.vegetables",
+        "garden.herbs",
+        "garden.composting",
+        "garden.design",
+        "garden.wildlife",
+        "garden.terrariums",
+        "garden.aquascaping",
+        "garden.hydroponics"
+      ],
+      "sourceId": "garden"
+    },
+    "garden.houseplants": {
+      "id": "garden.houseplants",
+      "label": "Houseplants",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [
+        "garden.houseplants.light",
+        "garden.houseplants.watering",
+        "garden.houseplants.propagation",
+        "garden.houseplants.potting",
+        "garden.houseplants.plant-journal",
+        "garden.houseplants.plant-sharing"
+      ],
+      "sourceId": "garden.houseplants"
+    },
+    "garden.vegetables": {
+      "id": "garden.vegetables",
+      "label": "Vegetable Garden",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.vegetables"
+    },
+    "garden.herbs": {
+      "id": "garden.herbs",
+      "label": "Herbs",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.herbs"
+    },
+    "garden.bonsai": {
+      "id": "garden.bonsai",
+      "label": "Bonsai",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [
+        "garden.bonsai.nursery-stock",
+        "garden.bonsai.yamadori",
+        "garden.bonsai.deadwood",
+        "garden.bonsai.wiring",
+        "garden.bonsai.ramification",
+        "garden.bonsai.species-study",
+        "garden.bonsai.winter-care",
+        "garden.bonsai.pots-display",
+        "garden.bonsai.soil-mixes",
+        "garden.bonsai.repotting"
+      ],
+      "sourceId": "garden.bonsai"
+    },
+    "garden.terrariums": {
+      "id": "garden.terrariums",
+      "label": "Terrariums",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.terrariums"
+    },
+    "garden.succulents": {
+      "id": "garden.succulents",
+      "label": "Succulents and Cacti",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.succulents"
+    },
+    "garden.orchids": {
+      "id": "garden.orchids",
+      "label": "Orchids",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.orchids"
+    },
+    "garden.composting": {
+      "id": "garden.composting",
+      "label": "Composting",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.composting"
+    },
+    "garden.seed-saving": {
+      "id": "garden.seed-saving",
+      "label": "Seed Saving",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.seed-saving"
+    },
+    "garden.propagation": {
+      "id": "garden.propagation",
+      "label": "Propagation",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.propagation"
+    },
+    "garden.hydroponics": {
+      "id": "garden.hydroponics",
+      "label": "Hydroponics",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.hydroponics"
+    },
+    "garden.aquascaping": {
+      "id": "garden.aquascaping",
+      "label": "Aquascaping",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.aquascaping"
+    },
+    "garden.design": {
+      "id": "garden.design",
+      "label": "Garden Design",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.design"
+    },
+    "garden.wildlife": {
+      "id": "garden.wildlife",
+      "label": "Wildlife Gardening",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.wildlife"
+    },
+    "category.kitchen": {
+      "id": "category.kitchen",
+      "label": "Cooking and Food",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [
+        "kitchen.cooking",
+        "kitchen.baking",
+        "kitchen.sourdough",
+        "kitchen.fermentation",
+        "kitchen.cheese",
+        "kitchen.homebrewing",
+        "kitchen.preserving",
+        "kitchen.bbq",
+        "kitchen.spices",
+        "kitchen.knife-skills",
+        "kitchen.pasta",
+        "kitchen.meal-planning",
+        "kitchen.food-photo",
+        "kitchen.chocolate"
+      ],
+      "sourceId": "kitchen"
+    },
+    "kitchen.cooking": {
+      "id": "kitchen.cooking",
+      "label": "Home Cooking",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.cooking"
+    },
+    "kitchen.baking": {
+      "id": "kitchen.baking",
+      "label": "Baking",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [
+        "kitchen.baking.cookies",
+        "kitchen.baking.cakes",
+        "kitchen.baking.enriched-doughs",
+        "kitchen.baking.lamination",
+        "kitchen.baking.pie-crust",
+        "kitchen.baking.bakers-math",
+        "kitchen.baking.starter-keeping",
+        "kitchen.baking.whole-grain",
+        "kitchen.baking.scoring",
+        "kitchen.baking.oven-steam"
+      ],
+      "sourceId": "kitchen.baking"
+    },
+    "kitchen.sourdough": {
+      "id": "kitchen.sourdough",
+      "label": "Sourdough",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.sourdough"
+    },
+    "kitchen.fermentation": {
+      "id": "kitchen.fermentation",
+      "label": "Fermentation",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.fermentation"
+    },
+    "kitchen.bbq": {
+      "id": "kitchen.bbq",
+      "label": "BBQ and Smoking",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.bbq"
+    },
+    "kitchen.knife-skills": {
+      "id": "kitchen.knife-skills",
+      "label": "Knife Skills",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.knife-skills"
+    },
+    "kitchen.pasta": {
+      "id": "kitchen.pasta",
+      "label": "Pasta Making",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.pasta"
+    },
+    "kitchen.preserving": {
+      "id": "kitchen.preserving",
+      "label": "Preserving",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.preserving"
+    },
+    "kitchen.homebrewing": {
+      "id": "kitchen.homebrewing",
+      "label": "Homebrewing",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.homebrewing"
+    },
+    "kitchen.chocolate": {
+      "id": "kitchen.chocolate",
+      "label": "Bean-to-Bar Chocolate",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.chocolate"
+    },
+    "kitchen.food-photo": {
+      "id": "kitchen.food-photo",
+      "label": "Food Photography",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.food-photo"
+    },
+    "kitchen.spices": {
+      "id": "kitchen.spices",
+      "label": "Spice Blending",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.spices"
+    },
+    "kitchen.meal-planning": {
+      "id": "kitchen.meal-planning",
+      "label": "Meal Planning",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.meal-planning"
+    },
+    "kitchen.cheese": {
+      "id": "kitchen.cheese",
+      "label": "Cheesemaking",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.cheese"
+    },
+    "category.outdoor": {
+      "id": "category.outdoor",
+      "label": "Outdoors",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [
+        "outdoor.hiking",
+        "outdoor.camping",
+        "outdoor.kayaking",
+        "outdoor.fishing",
+        "outdoor.backpacking",
+        "outdoor.weather",
+        "outdoor.navigation",
+        "outdoor.geocaching",
+        "outdoor.trail-running",
+        "outdoor.cycling",
+        "outdoor.bouldering",
+        "outdoor.birdwatching",
+        "outdoor.sketching",
+        "outdoor.foraging"
+      ],
+      "sourceId": "outdoor"
+    },
+    "outdoor.hiking": {
+      "id": "outdoor.hiking",
+      "label": "Hiking",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [
+        "outdoor.hiking.day-hikes",
+        "outdoor.hiking.snacks",
+        "outdoor.hiking.footwear",
+        "outdoor.hiking.night-hikes",
+        "outdoor.hiking.thru-routes",
+        "outdoor.hiking.leave-no-trace",
+        "outdoor.hiking.map-compass",
+        "outdoor.hiking.gpx",
+        "outdoor.hiking.logs",
+        "outdoor.hiking.peak-bagging"
+      ],
+      "sourceId": "outdoor.hiking"
+    },
+    "outdoor.camping": {
+      "id": "outdoor.camping",
+      "label": "Camping",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.camping"
+    },
+    "outdoor.backpacking": {
+      "id": "outdoor.backpacking",
+      "label": "Backpacking",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.backpacking"
+    },
+    "outdoor.bouldering": {
+      "id": "outdoor.bouldering",
+      "label": "Bouldering",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.bouldering"
+    },
+    "outdoor.cycling": {
+      "id": "outdoor.cycling",
+      "label": "Cycling",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.cycling"
+    },
+    "outdoor.birdwatching": {
+      "id": "outdoor.birdwatching",
+      "label": "Birdwatching",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [
+        "outdoor.birdwatching.field-notes",
+        "outdoor.birdwatching.birdsong",
+        "outdoor.birdwatching.local-patch",
+        "outdoor.birdwatching.behaviour",
+        "outdoor.birdwatching.sketching",
+        "outdoor.birdwatching.seasonal-log"
+      ],
+      "sourceId": "outdoor.birdwatching"
+    },
+    "outdoor.fishing": {
+      "id": "outdoor.fishing",
+      "label": "Fishing",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.fishing"
+    },
+    "outdoor.foraging": {
+      "id": "outdoor.foraging",
+      "label": "Foraging",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.foraging"
+    },
+    "outdoor.geocaching": {
+      "id": "outdoor.geocaching",
+      "label": "Geocaching",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.geocaching"
+    },
+    "outdoor.kayaking": {
+      "id": "outdoor.kayaking",
+      "label": "Kayaking",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.kayaking"
+    },
+    "outdoor.trail-running": {
+      "id": "outdoor.trail-running",
+      "label": "Trail Running",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.trail-running"
+    },
+    "outdoor.sketching": {
+      "id": "outdoor.sketching",
+      "label": "Field Sketching",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.sketching"
+    },
+    "outdoor.weather": {
+      "id": "outdoor.weather",
+      "label": "Weather Watching",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.weather"
+    },
+    "outdoor.navigation": {
+      "id": "outdoor.navigation",
+      "label": "Maps and Navigation",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.navigation"
+    },
+    "category.core": {
+      "id": "category.core",
+      "label": "Core Skills",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [
+        "core.electronics",
+        "core.soldering",
+        "core.painting",
+        "core.photography",
+        "core.programming",
+        "core.3d-printing",
+        "core.hand-tools",
+        "core.audio",
+        "core.writing"
+      ],
+      "sourceId": "core"
+    },
+    "core.electronics": {
+      "id": "core.electronics",
+      "label": "Electronics",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.electronics"
+    },
+    "core.soldering": {
+      "id": "core.soldering",
+      "label": "Soldering",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.soldering"
+    },
+    "core.painting": {
+      "id": "core.painting",
+      "label": "Painting",
+      "icon": "brush",
+      "color": "#c4b5fd",
+      "children": [
+        "core.painting.brush-control",
+        "core.painting.priming",
+        "core.painting.airbrush",
+        "core.painting.masking",
+        "core.painting.washes",
+        "core.painting.highlighting",
+        "core.painting.weathering",
+        "core.painting.metallics",
+        "core.painting.safety",
+        "core.painting.colour-theory"
+      ],
+      "sourceId": "core.painting"
+    },
+    "core.photography": {
+      "id": "core.photography",
+      "label": "Photography",
+      "icon": "camera",
+      "color": "#c4b5fd",
+      "children": [
+        "core.photography.composition",
+        "core.photography.natural-light",
+        "core.photography.street",
+        "core.photography.macro",
+        "core.photography.portraits",
+        "core.photography.photo-essays"
+      ],
+      "sourceId": "core.photography"
+    },
+    "core.programming": {
+      "id": "core.programming",
+      "label": "Programming",
+      "icon": "code",
+      "color": "#c4b5fd",
+      "children": [
+        "core.programming.scripts",
+        "core.programming.web",
+        "core.programming.embedded",
+        "core.programming.chatbots"
+      ],
+      "sourceId": "core.programming"
+    },
+    "core.3d-printing": {
+      "id": "core.3d-printing",
+      "label": "3D Printing",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.3d-printing"
+    },
+    "core.hand-tools": {
+      "id": "core.hand-tools",
+      "label": "Hand Tools",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [
+        "core.hand-tools.abrasives",
+        "core.hand-tools.cutting",
+        "core.hand-tools.drilling",
+        "core.hand-tools.adhesives",
+        "core.hand-tools.filling",
+        "core.hand-tools.measuring",
+        "core.hand-tools.jigs",
+        "core.hand-tools.safety"
+      ],
+      "sourceId": "core.hand-tools"
+    },
+    "core.audio": {
+      "id": "core.audio",
+      "label": "Audio",
+      "icon": "headphones",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.audio"
+    },
+    "core.writing": {
+      "id": "core.writing",
+      "label": "Writing",
+      "icon": "pen",
+      "color": "#c4b5fd",
+      "children": [
+        "core.writing.journaling",
+        "core.writing.short-fiction",
+        "core.writing.poetry",
+        "core.writing.worldbuilding",
+        "core.writing.revision",
+        "core.writing.documentation"
+      ],
+      "sourceId": "core.writing"
+    },
+    "book.fiction.mystery": {
+      "id": "book.fiction.mystery",
+      "label": "Mystery and crime",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.fiction.mystery"
+    },
+    "book.fiction.horror": {
+      "id": "book.fiction.horror",
+      "label": "Horror",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.fiction.horror"
+    },
+    "book.fiction.historical": {
+      "id": "book.fiction.historical",
+      "label": "Historical fiction",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.fiction.historical"
+    },
+    "book.fiction.romance": {
+      "id": "book.fiction.romance",
+      "label": "Romance",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.fiction.romance"
+    },
+    "book.fiction.literary": {
+      "id": "book.fiction.literary",
+      "label": "Literary fiction",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.fiction.literary"
+    },
+    "book.fiction.translated": {
+      "id": "book.fiction.translated",
+      "label": "Translated fiction",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.fiction.translated"
+    },
+    "book.fiction.short-stories": {
+      "id": "book.fiction.short-stories",
+      "label": "Short stories",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.fiction.short-stories"
+    },
+    "book.fiction.epics": {
+      "id": "book.fiction.epics",
+      "label": "Doorstop epics",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.fiction.epics"
+    },
+    "book.fiction.rereads": {
+      "id": "book.fiction.rereads",
+      "label": "Rereading favourites",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.fiction.rereads"
+    },
+    "book.fiction.reading-log": {
+      "id": "book.fiction.reading-log",
+      "label": "Logs and reviews",
+      "icon": "book",
+      "color": "#fcd34d",
+      "children": [],
+      "sourceId": "book.fiction.reading-log"
+    },
+    "coffee.espresso.dialling": {
+      "id": "coffee.espresso.dialling",
+      "label": "Dialling in by taste",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "coffee.espresso.dialling"
+    },
+    "coffee.espresso.puck-prep": {
+      "id": "coffee.espresso.puck-prep",
+      "label": "Puck preparation",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "coffee.espresso.puck-prep"
+    },
+    "coffee.espresso.tasting": {
+      "id": "coffee.espresso.tasting",
+      "label": "Comparative tasting",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "coffee.espresso.tasting"
+    },
+    "coffee.espresso.milk-drinks": {
+      "id": "coffee.espresso.milk-drinks",
+      "label": "Milk drinks",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "coffee.espresso.milk-drinks"
+    },
+    "coffee.espresso.brew-journal": {
+      "id": "coffee.espresso.brew-journal",
+      "label": "A brew journal",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "coffee.espresso.brew-journal"
+    },
+    "coffee.espresso.bean-comparison": {
+      "id": "coffee.espresso.bean-comparison",
+      "label": "Exploring coffee origins",
+      "icon": "coffee",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "coffee.espresso.bean-comparison"
+    },
+    "core.hand-tools.abrasives": {
+      "id": "core.hand-tools.abrasives",
+      "label": "Grit progression",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.hand-tools.abrasives"
+    },
+    "core.hand-tools.cutting": {
+      "id": "core.hand-tools.cutting",
+      "label": "Cutting",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.hand-tools.cutting"
+    },
+    "core.hand-tools.drilling": {
+      "id": "core.hand-tools.drilling",
+      "label": "Drilling",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.hand-tools.drilling"
+    },
+    "core.hand-tools.adhesives": {
+      "id": "core.hand-tools.adhesives",
+      "label": "Adhesives",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.hand-tools.adhesives"
+    },
+    "core.hand-tools.filling": {
+      "id": "core.hand-tools.filling",
+      "label": "Filling",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.hand-tools.filling"
+    },
+    "core.hand-tools.measuring": {
+      "id": "core.hand-tools.measuring",
+      "label": "Measuring",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.hand-tools.measuring"
+    },
+    "core.hand-tools.jigs": {
+      "id": "core.hand-tools.jigs",
+      "label": "Jigs and clamps",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.hand-tools.jigs"
+    },
+    "core.hand-tools.safety": {
+      "id": "core.hand-tools.safety",
+      "label": "Dust and PPE",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.hand-tools.safety"
+    },
+    "core.painting.brush-control": {
+      "id": "core.painting.brush-control",
+      "label": "Brush control",
+      "icon": "brush",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.painting.brush-control"
+    },
+    "core.painting.priming": {
+      "id": "core.painting.priming",
+      "label": "Priming",
+      "icon": "brush",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.painting.priming"
+    },
+    "core.painting.airbrush": {
+      "id": "core.painting.airbrush",
+      "label": "Airbrushing",
+      "icon": "brush",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.painting.airbrush"
+    },
+    "core.painting.masking": {
+      "id": "core.painting.masking",
+      "label": "Masking",
+      "icon": "brush",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.painting.masking"
+    },
+    "core.painting.washes": {
+      "id": "core.painting.washes",
+      "label": "Washes",
+      "icon": "brush",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.painting.washes"
+    },
+    "core.painting.highlighting": {
+      "id": "core.painting.highlighting",
+      "label": "Highlighting",
+      "icon": "brush",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.painting.highlighting"
+    },
+    "core.painting.weathering": {
+      "id": "core.painting.weathering",
+      "label": "Weathering",
+      "icon": "brush",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.painting.weathering"
+    },
+    "core.painting.metallics": {
+      "id": "core.painting.metallics",
+      "label": "Metallics",
+      "icon": "brush",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.painting.metallics"
+    },
+    "core.painting.safety": {
+      "id": "core.painting.safety",
+      "label": "Spray safety",
+      "icon": "brush",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.painting.safety"
+    },
+    "core.painting.colour-theory": {
+      "id": "core.painting.colour-theory",
+      "label": "Colour theory",
+      "icon": "brush",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.painting.colour-theory"
+    },
+    "core.photography.composition": {
+      "id": "core.photography.composition",
+      "label": "Composition",
+      "icon": "camera",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.photography.composition"
+    },
+    "core.photography.natural-light": {
+      "id": "core.photography.natural-light",
+      "label": "Natural light",
+      "icon": "camera",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.photography.natural-light"
+    },
+    "core.photography.street": {
+      "id": "core.photography.street",
+      "label": "Street photography",
+      "icon": "camera",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.photography.street"
+    },
+    "core.photography.macro": {
+      "id": "core.photography.macro",
+      "label": "Close-up photography",
+      "icon": "camera",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.photography.macro"
+    },
+    "core.photography.portraits": {
+      "id": "core.photography.portraits",
+      "label": "Portraits",
+      "icon": "camera",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.photography.portraits"
+    },
+    "core.photography.photo-essays": {
+      "id": "core.photography.photo-essays",
+      "label": "Photo essays",
+      "icon": "camera",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.photography.photo-essays"
+    },
+    "core.programming.scripts": {
+      "id": "core.programming.scripts",
+      "label": "Automation Scripts",
+      "icon": "code",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.programming.scripts"
+    },
+    "core.programming.web": {
+      "id": "core.programming.web",
+      "label": "Web Design",
+      "icon": "code",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.programming.web"
+    },
+    "core.programming.embedded": {
+      "id": "core.programming.embedded",
+      "label": "Microcontroller Code",
+      "icon": "code",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.programming.embedded"
+    },
+    "core.programming.chatbots": {
+      "id": "core.programming.chatbots",
+      "label": "Chatbots and Agents",
+      "icon": "code",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.programming.chatbots"
+    },
+    "core.writing.journaling": {
+      "id": "core.writing.journaling",
+      "label": "Journaling",
+      "icon": "pen",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.writing.journaling"
+    },
+    "core.writing.short-fiction": {
+      "id": "core.writing.short-fiction",
+      "label": "Short fiction",
+      "icon": "pen",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.writing.short-fiction"
+    },
+    "core.writing.poetry": {
+      "id": "core.writing.poetry",
+      "label": "Poetry experiments",
+      "icon": "pen",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.writing.poetry"
+    },
+    "core.writing.worldbuilding": {
+      "id": "core.writing.worldbuilding",
+      "label": "Worldbuilding",
+      "icon": "pen",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.writing.worldbuilding"
+    },
+    "core.writing.revision": {
+      "id": "core.writing.revision",
+      "label": "Revision and editing",
+      "icon": "pen",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.writing.revision"
+    },
+    "core.writing.documentation": {
+      "id": "core.writing.documentation",
+      "label": "Writing useful instructions",
+      "icon": "pen",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "core.writing.documentation"
+    },
+    "figure.garage-kits.flash": {
+      "id": "figure.garage-kits.flash",
+      "label": "Flash removal",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.garage-kits.flash"
+    },
+    "figure.garage-kits.pinning": {
+      "id": "figure.garage-kits.pinning",
+      "label": "Pinning",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.garage-kits.pinning"
+    },
+    "figure.garage-kits.degrease": {
+      "id": "figure.garage-kits.degrease",
+      "label": "Degreasing",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.garage-kits.degrease"
+    },
+    "figure.garage-kits.priming": {
+      "id": "figure.garage-kits.priming",
+      "label": "Priming",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.garage-kits.priming"
+    },
+    "figure.garage-kits.pinholes": {
+      "id": "figure.garage-kits.pinholes",
+      "label": "Pinhole repair",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.garage-kits.pinholes"
+    },
+    "figure.garage-kits.skin": {
+      "id": "figure.garage-kits.skin",
+      "label": "Skin tones",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.garage-kits.skin"
+    },
+    "figure.garage-kits.face": {
+      "id": "figure.garage-kits.face",
+      "label": "Face and eyes",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.garage-kits.face"
+    },
+    "figure.garage-kits.hair": {
+      "id": "figure.garage-kits.hair",
+      "label": "Hair assembly",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.garage-kits.hair"
+    },
+    "figure.garage-kits.coats": {
+      "id": "figure.garage-kits.coats",
+      "label": "Gloss and flat",
+      "icon": "figure",
+      "color": "#f9a8d4",
+      "children": [],
+      "sourceId": "figure.garage-kits.coats"
+    },
+    "film.horror.slasher": {
+      "id": "film.horror.slasher",
+      "label": "Slasher",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.horror.slasher"
+    },
+    "film.horror.giallo": {
+      "id": "film.horror.giallo",
+      "label": "Giallo",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.horror.giallo"
+    },
+    "film.horror.folk": {
+      "id": "film.horror.folk",
+      "label": "Folk Horror",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.horror.folk"
+    },
+    "film.horror.cosmic": {
+      "id": "film.horror.cosmic",
+      "label": "Cosmic Horror",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.horror.cosmic"
+    },
+    "film.horror.body": {
+      "id": "film.horror.body",
+      "label": "Body Horror",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.horror.body"
+    },
+    "film.horror.found-footage": {
+      "id": "film.horror.found-footage",
+      "label": "Found Footage",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.horror.found-footage"
+    },
+    "film.horror.creature": {
+      "id": "film.horror.creature",
+      "label": "Creature Feature",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.horror.creature"
+    },
+    "film.horror.jhorror": {
+      "id": "film.horror.jhorror",
+      "label": "J-Horror",
+      "icon": "film",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "film.horror.jhorror"
+    },
+    "game.pc-building.parts-picking": {
+      "id": "game.pc-building.parts-picking",
+      "label": "Parts picking",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.pc-building.parts-picking"
+    },
+    "game.pc-building.watercooling": {
+      "id": "game.pc-building.watercooling",
+      "label": "Watercooling",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.pc-building.watercooling"
+    },
+    "game.pc-building.cable-management": {
+      "id": "game.pc-building.cable-management",
+      "label": "Cable management",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.pc-building.cable-management"
+    },
+    "game.pc-building.overclocking": {
+      "id": "game.pc-building.overclocking",
+      "label": "Overclocking",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.pc-building.overclocking"
+    },
+    "game.pc-building.undervolting": {
+      "id": "game.pc-building.undervolting",
+      "label": "Undervolting",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.pc-building.undervolting"
+    },
+    "game.pc-building.small-form-factor": {
+      "id": "game.pc-building.small-form-factor",
+      "label": "Small form factor",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.pc-building.small-form-factor"
+    },
+    "game.pc-building.benchmarking": {
+      "id": "game.pc-building.benchmarking",
+      "label": "Benchmarking",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.pc-building.benchmarking"
+    },
+    "game.pc-building.silent-builds": {
+      "id": "game.pc-building.silent-builds",
+      "label": "Silent builds",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.pc-building.silent-builds"
+    },
+    "game.pc-building.case-modding": {
+      "id": "game.pc-building.case-modding",
+      "label": "Case modding",
+      "icon": "gamepad",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "game.pc-building.case-modding"
+    },
+    "garden.bonsai.nursery-stock": {
+      "id": "garden.bonsai.nursery-stock",
+      "label": "Nursery stock hunting",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.bonsai.nursery-stock"
+    },
+    "garden.bonsai.yamadori": {
+      "id": "garden.bonsai.yamadori",
+      "label": "Yamadori",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.bonsai.yamadori"
+    },
+    "garden.bonsai.wiring": {
+      "id": "garden.bonsai.wiring",
+      "label": "Wiring",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.bonsai.wiring"
+    },
+    "garden.bonsai.ramification": {
+      "id": "garden.bonsai.ramification",
+      "label": "Pruning and ramification",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.bonsai.ramification"
+    },
+    "garden.bonsai.repotting": {
+      "id": "garden.bonsai.repotting",
+      "label": "Repotting and root work",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.bonsai.repotting"
+    },
+    "garden.bonsai.soil-mixes": {
+      "id": "garden.bonsai.soil-mixes",
+      "label": "Soil mixes",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.bonsai.soil-mixes"
+    },
+    "garden.bonsai.deadwood": {
+      "id": "garden.bonsai.deadwood",
+      "label": "Deadwood, jin and shari",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.bonsai.deadwood"
+    },
+    "garden.bonsai.species-study": {
+      "id": "garden.bonsai.species-study",
+      "label": "Species study",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.bonsai.species-study"
+    },
+    "garden.bonsai.pots-display": {
+      "id": "garden.bonsai.pots-display",
+      "label": "Pots and display",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.bonsai.pots-display"
+    },
+    "garden.bonsai.winter-care": {
+      "id": "garden.bonsai.winter-care",
+      "label": "Winter care",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.bonsai.winter-care"
+    },
+    "garden.houseplants.light": {
+      "id": "garden.houseplants.light",
+      "label": "Reading the light",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.houseplants.light"
+    },
+    "garden.houseplants.watering": {
+      "id": "garden.houseplants.watering",
+      "label": "Watering observations",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.houseplants.watering"
+    },
+    "garden.houseplants.propagation": {
+      "id": "garden.houseplants.propagation",
+      "label": "Propagation experiments",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.houseplants.propagation"
+    },
+    "garden.houseplants.potting": {
+      "id": "garden.houseplants.potting",
+      "label": "Pots and growing media",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.houseplants.potting"
+    },
+    "garden.houseplants.plant-journal": {
+      "id": "garden.houseplants.plant-journal",
+      "label": "A plant journal",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.houseplants.plant-journal"
+    },
+    "garden.houseplants.plant-sharing": {
+      "id": "garden.houseplants.plant-sharing",
+      "label": "Plant swaps",
+      "icon": "flower",
+      "color": "#86efac",
+      "children": [],
+      "sourceId": "garden.houseplants.plant-sharing"
+    },
+    "kitchen.baking.cookies": {
+      "id": "kitchen.baking.cookies",
+      "label": "Cookies",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.baking.cookies"
+    },
+    "kitchen.baking.cakes": {
+      "id": "kitchen.baking.cakes",
+      "label": "Cakes and sponges",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.baking.cakes"
+    },
+    "kitchen.baking.enriched-doughs": {
+      "id": "kitchen.baking.enriched-doughs",
+      "label": "Enriched doughs",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.baking.enriched-doughs"
+    },
+    "kitchen.baking.lamination": {
+      "id": "kitchen.baking.lamination",
+      "label": "Laminated pastry",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.baking.lamination"
+    },
+    "kitchen.baking.pie-crust": {
+      "id": "kitchen.baking.pie-crust",
+      "label": "Pie and tart crust",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.baking.pie-crust"
+    },
+    "kitchen.baking.bakers-math": {
+      "id": "kitchen.baking.bakers-math",
+      "label": "Baker's percentages",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.baking.bakers-math"
+    },
+    "kitchen.baking.starter-keeping": {
+      "id": "kitchen.baking.starter-keeping",
+      "label": "Starter keeping",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.baking.starter-keeping"
+    },
+    "kitchen.baking.whole-grain": {
+      "id": "kitchen.baking.whole-grain",
+      "label": "Rye and whole grain",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.baking.whole-grain"
+    },
+    "kitchen.baking.scoring": {
+      "id": "kitchen.baking.scoring",
+      "label": "Bread scoring",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.baking.scoring"
+    },
+    "kitchen.baking.oven-steam": {
+      "id": "kitchen.baking.oven-steam",
+      "label": "Oven steam tricks",
+      "icon": "chef",
+      "color": "#fdba74",
+      "children": [],
+      "sourceId": "kitchen.baking.oven-steam"
+    },
+    "maker.arduino.simulation": {
+      "id": "maker.arduino.simulation",
+      "label": "Circuit simulation",
+      "icon": "code",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.arduino.simulation"
+    },
+    "maker.arduino.inputs": {
+      "id": "maker.arduino.inputs",
+      "label": "Buttons and input",
+      "icon": "code",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.arduino.inputs"
+    },
+    "maker.arduino.sensors": {
+      "id": "maker.arduino.sensors",
+      "label": "Reading sensors",
+      "icon": "code",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.arduino.sensors"
+    },
+    "maker.arduino.feedback": {
+      "id": "maker.arduino.feedback",
+      "label": "Light and sound feedback",
+      "icon": "code",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.arduino.feedback"
+    },
+    "maker.arduino.debugging": {
+      "id": "maker.arduino.debugging",
+      "label": "Serial debugging",
+      "icon": "code",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.arduino.debugging"
+    },
+    "maker.arduino.enclosures": {
+      "id": "maker.arduino.enclosures",
+      "label": "A home for the project",
+      "icon": "code",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "maker.arduino.enclosures"
+    },
+    "model.gunpla.panel-lining": {
+      "id": "model.gunpla.panel-lining",
+      "label": "Panel lining",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "model.gunpla.panel-lining"
+    },
+    "model.gunpla.topcoat": {
+      "id": "model.gunpla.topcoat",
+      "label": "Top coat",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "model.gunpla.topcoat"
+    },
+    "model.gunpla.weathering": {
+      "id": "model.gunpla.weathering",
+      "label": "Weathering",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "model.gunpla.weathering"
+    },
+    "model.gunpla.scribing": {
+      "id": "model.gunpla.scribing",
+      "label": "Scribing",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "model.gunpla.scribing"
+    },
+    "model.gunpla.nub-removal": {
+      "id": "model.gunpla.nub-removal",
+      "label": "Nub removal",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "model.gunpla.nub-removal"
+    },
+    "model.gunpla.seam-lines": {
+      "id": "model.gunpla.seam-lines",
+      "label": "Seam removal",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "model.gunpla.seam-lines"
+    },
+    "model.gunpla.pla-plate": {
+      "id": "model.gunpla.pla-plate",
+      "label": "Pla-plate work",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "model.gunpla.pla-plate"
+    },
+    "model.gunpla.led-install": {
+      "id": "model.gunpla.led-install",
+      "label": "LED install",
+      "icon": "tools",
+      "color": "#c4b5fd",
+      "children": [],
+      "sourceId": "model.gunpla.led-install"
+    },
+    "music.guitar.rhythm": {
+      "id": "music.guitar.rhythm",
+      "label": "Rhythm and strumming",
+      "icon": "guitar",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "music.guitar.rhythm"
+    },
+    "music.guitar.fingerstyle": {
+      "id": "music.guitar.fingerstyle",
+      "label": "Fingerstyle",
+      "icon": "guitar",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "music.guitar.fingerstyle"
+    },
+    "music.guitar.ear-training": {
+      "id": "music.guitar.ear-training",
+      "label": "Learning by ear",
+      "icon": "guitar",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "music.guitar.ear-training"
+    },
+    "music.guitar.songwriting": {
+      "id": "music.guitar.songwriting",
+      "label": "Writing songs",
+      "icon": "guitar",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "music.guitar.songwriting"
+    },
+    "music.guitar.improvisation": {
+      "id": "music.guitar.improvisation",
+      "label": "Improvisation",
+      "icon": "guitar",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "music.guitar.improvisation"
+    },
+    "music.guitar.ensemble": {
+      "id": "music.guitar.ensemble",
+      "label": "Playing together",
+      "icon": "guitar",
+      "color": "#fca5a5",
+      "children": [],
+      "sourceId": "music.guitar.ensemble"
+    },
+    "outdoor.birdwatching.field-notes": {
+      "id": "outdoor.birdwatching.field-notes",
+      "label": "Field notes",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.birdwatching.field-notes"
+    },
+    "outdoor.birdwatching.birdsong": {
+      "id": "outdoor.birdwatching.birdsong",
+      "label": "Listening for birds",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.birdwatching.birdsong"
+    },
+    "outdoor.birdwatching.local-patch": {
+      "id": "outdoor.birdwatching.local-patch",
+      "label": "A regular observation spot",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.birdwatching.local-patch"
+    },
+    "outdoor.birdwatching.behaviour": {
+      "id": "outdoor.birdwatching.behaviour",
+      "label": "Watching behaviour",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.birdwatching.behaviour"
+    },
+    "outdoor.birdwatching.sketching": {
+      "id": "outdoor.birdwatching.sketching",
+      "label": "Bird sketches",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.birdwatching.sketching"
+    },
+    "outdoor.birdwatching.seasonal-log": {
+      "id": "outdoor.birdwatching.seasonal-log",
+      "label": "Seasonal observations",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.birdwatching.seasonal-log"
+    },
+    "outdoor.hiking.day-hikes": {
+      "id": "outdoor.hiking.day-hikes",
+      "label": "Day hikes",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.hiking.day-hikes"
+    },
+    "outdoor.hiking.thru-routes": {
+      "id": "outdoor.hiking.thru-routes",
+      "label": "Overnight and thru routes",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.hiking.thru-routes"
+    },
+    "outdoor.hiking.map-compass": {
+      "id": "outdoor.hiking.map-compass",
+      "label": "Map and compass",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.hiking.map-compass"
+    },
+    "outdoor.hiking.gpx": {
+      "id": "outdoor.hiking.gpx",
+      "label": "GPX planning",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.hiking.gpx"
+    },
+    "outdoor.hiking.snacks": {
+      "id": "outdoor.hiking.snacks",
+      "label": "Trail snacks and water",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.hiking.snacks"
+    },
+    "outdoor.hiking.footwear": {
+      "id": "outdoor.hiking.footwear",
+      "label": "Footwear and blister craft",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.hiking.footwear"
+    },
+    "outdoor.hiking.peak-bagging": {
+      "id": "outdoor.hiking.peak-bagging",
+      "label": "Peak bagging",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.hiking.peak-bagging"
+    },
+    "outdoor.hiking.night-hikes": {
+      "id": "outdoor.hiking.night-hikes",
+      "label": "Night hikes",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.hiking.night-hikes"
+    },
+    "outdoor.hiking.leave-no-trace": {
+      "id": "outdoor.hiking.leave-no-trace",
+      "label": "Leave no trace",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.hiking.leave-no-trace"
+    },
+    "outdoor.hiking.logs": {
+      "id": "outdoor.hiking.logs",
+      "label": "Hiking logs",
+      "icon": "leaf",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "outdoor.hiking.logs"
+    },
+    "radio.antennas.dipole": {
+      "id": "radio.antennas.dipole",
+      "label": "Dipole",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "radio.antennas.dipole"
+    },
+    "radio.antennas.vertical": {
+      "id": "radio.antennas.vertical",
+      "label": "Vertical",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "radio.antennas.vertical"
+    },
+    "radio.antennas.yagi": {
+      "id": "radio.antennas.yagi",
+      "label": "Yagi",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "radio.antennas.yagi"
+    },
+    "radio.antennas.loop": {
+      "id": "radio.antennas.loop",
+      "label": "Magnetic loop",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "radio.antennas.loop"
+    },
+    "radio.antennas.swr": {
+      "id": "radio.antennas.swr",
+      "label": "SWR and tune",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "radio.antennas.swr"
+    },
+    "radio.antennas.feedline": {
+      "id": "radio.antennas.feedline",
+      "label": "Feedline",
+      "icon": "satellite",
+      "color": "#6ee7b7",
+      "children": [],
+      "sourceId": "radio.antennas.feedline"
+    },
+    "rail.dcc.addressing": {
+      "id": "rail.dcc.addressing",
+      "label": "Addressing",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.dcc.addressing"
+    },
+    "rail.dcc.cv": {
+      "id": "rail.dcc.cv",
+      "label": "CV programming",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.dcc.cv"
+    },
+    "rail.dcc.consisting": {
+      "id": "rail.dcc.consisting",
+      "label": "Consisting",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.dcc.consisting"
+    },
+    "rail.dcc.sound": {
+      "id": "rail.dcc.sound",
+      "label": "Sound decoders",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.dcc.sound"
+    },
+    "rail.dcc.detection": {
+      "id": "rail.dcc.detection",
+      "label": "Block detection",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.dcc.detection"
+    },
+    "rail.dcc.jmri": {
+      "id": "rail.dcc.jmri",
+      "label": "Computer control",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.dcc.jmri"
+    },
+    "rail.dcc.throttles": {
+      "id": "rail.dcc.throttles",
+      "label": "Throttles",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.dcc.throttles"
+    },
+    "rail.layout.track-plan": {
+      "id": "rail.layout.track-plan",
+      "label": "Track plan",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.layout.track-plan"
+    },
+    "rail.layout.radius": {
+      "id": "rail.layout.radius",
+      "label": "Minimum radius",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.layout.radius"
+    },
+    "rail.layout.staging": {
+      "id": "rail.layout.staging",
+      "label": "Staging",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.layout.staging"
+    },
+    "rail.layout.helix": {
+      "id": "rail.layout.helix",
+      "label": "Helix",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.layout.helix"
+    },
+    "rail.layout.grades": {
+      "id": "rail.layout.grades",
+      "label": "Grades",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.layout.grades"
+    },
+    "rail.layout.aisle": {
+      "id": "rail.layout.aisle",
+      "label": "Aisle width",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.layout.aisle"
+    },
+    "rail.layout.backdrop": {
+      "id": "rail.layout.backdrop",
+      "label": "Backdrop",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.layout.backdrop"
+    },
+    "rail.layout.lighting": {
+      "id": "rail.layout.lighting",
+      "label": "Layout lighting",
+      "icon": "train",
+      "color": "#93c5fd",
+      "children": [],
+      "sourceId": "rail.layout.lighting"
+    },
+    "starwars.props.saber": {
+      "id": "starwars.props.saber",
+      "label": "Saber hilt",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [],
+      "sourceId": "starwars.props.saber"
+    },
+    "starwars.props.blaster": {
+      "id": "starwars.props.blaster",
+      "label": "Blaster",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [],
+      "sourceId": "starwars.props.blaster"
+    },
+    "starwars.props.helmet": {
+      "id": "starwars.props.helmet",
+      "label": "Helmet",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [],
+      "sourceId": "starwars.props.helmet"
+    },
+    "starwars.props.armour": {
+      "id": "starwars.props.armour",
+      "label": "Armour",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [],
+      "sourceId": "starwars.props.armour"
+    },
+    "starwars.props.greeblies": {
+      "id": "starwars.props.greeblies",
+      "label": "Greeblies",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [],
+      "sourceId": "starwars.props.greeblies"
+    },
+    "starwars.props.finishing": {
+      "id": "starwars.props.finishing",
+      "label": "Prop finishing",
+      "icon": "star",
+      "color": "#fde68a",
+      "children": [],
+      "sourceId": "starwars.props.finishing"
+    },
+    "tabletop.boardgames.cooperative": {
+      "id": "tabletop.boardgames.cooperative",
+      "label": "Cooperative play",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "tabletop.boardgames.cooperative"
+    },
+    "tabletop.boardgames.deckbuilding": {
+      "id": "tabletop.boardgames.deckbuilding",
+      "label": "Deck building",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "tabletop.boardgames.deckbuilding"
+    },
+    "tabletop.boardgames.worker-placement": {
+      "id": "tabletop.boardgames.worker-placement",
+      "label": "Worker placement",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "tabletop.boardgames.worker-placement"
+    },
+    "tabletop.boardgames.abstract": {
+      "id": "tabletop.boardgames.abstract",
+      "label": "Abstract strategy",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "tabletop.boardgames.abstract"
+    },
+    "tabletop.boardgames.party": {
+      "id": "tabletop.boardgames.party",
+      "label": "Party and word games",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "tabletop.boardgames.party"
+    },
+    "tabletop.boardgames.solo": {
+      "id": "tabletop.boardgames.solo",
+      "label": "Solo puzzles and scenarios",
+      "icon": "dice",
+      "color": "#a5b4fc",
+      "children": [],
+      "sourceId": "tabletop.boardgames.solo"
+    },
+    "video.editing.assembly": {
+      "id": "video.editing.assembly",
+      "label": "Assembly cut",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.editing.assembly"
+    },
+    "video.editing.pacing": {
+      "id": "video.editing.pacing",
+      "label": "Pacing",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.editing.pacing"
+    },
+    "video.editing.b-roll": {
+      "id": "video.editing.b-roll",
+      "label": "B-roll",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.editing.b-roll"
+    },
+    "video.editing.sound-mix": {
+      "id": "video.editing.sound-mix",
+      "label": "Sound mix",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.editing.sound-mix"
+    },
+    "video.editing.titles": {
+      "id": "video.editing.titles",
+      "label": "Titles",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.editing.titles"
+    },
+    "video.editing.captions": {
+      "id": "video.editing.captions",
+      "label": "Captions",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.editing.captions"
+    },
+    "video.editing.proxies": {
+      "id": "video.editing.proxies",
+      "label": "Proxies",
+      "icon": "camera",
+      "color": "#67e8f9",
+      "children": [],
+      "sourceId": "video.editing.proxies"
+    }
+  },
+  "counts": {
+    "categories": 23,
+    "hobbies": 330,
+    "inner": 178
+  }
+}

@@ -1,0 +1,12 @@
+flowchart LR
+    A[Aficion catalog] -->|snapshot generator| C[Local hobby catalog]
+    C --> M[Validated hobby tree]
+    M --> W[SVG wheel and zoom]
+    W -->|suggestion only| U[Check-in form]
+    U -->|explicit save| S[State store]
+    S --> L[(Browser storage)]
+    S --> J[Journal and observed patterns]
+    S --> B[JSON backup and recovery]
+    S -->|explicit preview| P[Share text]
+    O[Service worker] -->|cached shell and catalog| U
+    O -->|cached styles| W
