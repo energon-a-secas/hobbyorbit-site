@@ -1,7 +1,7 @@
 /* Kurukuru's support and privacy pages: static documents in Hobby Orbit's
    palette (css/style.css) and the fleet shell. The header and footer are the
-   vendored kits; only the brand line in the header is styled here. */
-.info-brand { font-size: 1.2rem; font-weight: 600; line-height: 1.2; letter-spacing: .015em; color: var(--header-text, var(--text-primary)); white-space: nowrap; }
+   vendored kits and nothing here styles them, in print either: the footer
+   kit prints the footer with its link addresses, for provenance. */
 
 .info-document { width: min(100% - 32px, 70ch); margin: 0 auto; padding: clamp(40px, 7vw, 88px) 0 72px; }
 .info-document h1 { font-size: clamp(2.25rem, 7vw, 3.5rem); line-height: 1.12; letter-spacing: -.035em; margin: .5rem 0 1.25rem; }
@@ -46,7 +46,7 @@
   .info-document a { transition: text-decoration-color .2s var(--ease-out); }
 }
 @media print {
-  .header-bar, .neo-footer, .skip-link, .info-contents { display: none; }
+  .skip-link, .info-contents { display: none; }
   .info-document { width: 100%; padding: 0; }
   .info-document details { break-inside: avoid; }
 }

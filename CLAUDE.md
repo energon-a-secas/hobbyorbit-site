@@ -27,7 +27,9 @@ the user reloads; they must never clear personal data.
 - `js/render.js`, `js/events.js`, `js/dialogs.js`, and `js/ui-*.js` own UI.
 - `js/pwa.js`, `sw.js`, `offline-assets.js` own installation and offline access.
   The service worker answers only the app's own page from its cache; any other
-  page on the origin goes to the network.
+  page on the origin goes to the network. A returning visitor's older worker,
+  which answered every page with the wheel, keeps doing so until the new one
+  takes over: they accept the app's update, or every tab of the site closes.
 - `kurukuru/` is the iOS app's static support and privacy pages (Kurukuru, the
   App Store listing's URLs): the header and footer kits, no app JS. Its privacy
   page describes the native app, so a change to what the app stores or sends
