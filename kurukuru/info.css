@@ -1,0 +1,52 @@
+/* Kurukuru's support and privacy pages: static documents in Hobby Orbit's
+   palette (css/style.css) and the fleet shell. The header and footer are the
+   vendored kits; only the brand line in the header is styled here. */
+.info-brand { font-size: 1.2rem; font-weight: 600; line-height: 1.2; letter-spacing: .015em; color: var(--header-text, var(--text-primary)); white-space: nowrap; }
+
+.info-document { width: min(100% - 32px, 70ch); margin: 0 auto; padding: clamp(40px, 7vw, 88px) 0 72px; }
+.info-document h1 { font-size: clamp(2.25rem, 7vw, 3.5rem); line-height: 1.12; letter-spacing: -.035em; margin: .5rem 0 1.25rem; }
+.info-document h2 { font-size: 1.5rem; line-height: 1.3; margin: 2.75rem 0 .75rem; }
+.info-document h3 { font-size: 1.125rem; margin: 1.5rem 0 .5rem; }
+.info-document section { scroll-margin-top: 90px; }
+.info-document p, .info-document li { font-size: 1rem; line-height: 1.75; color: var(--text-secondary); }
+.info-document strong { color: var(--text-primary); }
+.info-document p { margin: 0 0 1rem; max-width: none; }
+.info-document ul, .info-document ol { padding-left: 1.4rem; margin: .75rem 0 1.25rem; }
+.info-document li + li { margin-top: .5rem; }
+.info-document a { color: var(--text-primary); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: .2em; overflow-wrap: anywhere; }
+.info-document a:hover { text-decoration-thickness: 2px; }
+.info-document :focus-visible { outline: 2px solid var(--accent-bright); outline-offset: 5px; border-radius: 3px; }
+
+.info-kicker { color: var(--text-muted); font-size: .875rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.info-document .info-lead { color: var(--text-secondary); font-size: 1.25rem; line-height: 1.6; }
+.info-status { display: inline-flex; align-items: center; gap: .6rem; margin: .5rem 0 1.5rem; padding: .45rem .9rem; border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); border-radius: 999px; background: color-mix(in srgb, var(--accent) 10%, transparent); color: var(--text-primary); font-size: .9375rem; font-weight: 600; }
+.info-status::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: 0 0 auto; }
+
+.info-summary { border-block: 1px solid var(--border); padding: 1.25rem 0 .25rem; margin: 2rem 0; }
+.info-summary p:first-child { color: var(--text-primary); font-size: 1.125rem; }
+.info-contents { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; padding: .5rem 0; }
+.info-contents a { display: inline-flex; align-items: center; min-height: 44px; }
+
+.info-document .info-features { list-style: none; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); }
+.info-features li { margin: 0; padding: 1rem 1.1rem; border: 1px solid var(--border); border-radius: var(--radius, 10px); background: var(--surface-1); }
+.info-features li + li { margin-top: 0; }
+.info-features strong { display: block; margin-bottom: .25rem; }
+
+.info-document details { border-bottom: 1px solid var(--border); padding: .5rem 0; }
+.info-document summary { cursor: pointer; display: flex; align-items: center; gap: 1rem; min-height: 44px; padding: .5rem 0; font-weight: 600; font-size: 1.125rem; color: var(--text-primary); list-style: none; }
+.info-document summary::-webkit-details-marker { display: none; }
+.info-document summary::after { content: '+'; margin-left: auto; flex: 0 0 auto; width: 1.5rem; text-align: center; color: var(--accent); font-size: 1.375rem; font-weight: 500; line-height: 1; }
+.info-document details[open] > summary::after { content: '\2212'; }
+.info-document details[open] summary { margin-bottom: .5rem; }
+.info-pages { display: flex; flex-wrap: wrap; align-items: center; gap: 0 1.25rem; }
+.info-pages a { display: inline-flex; align-items: center; min-height: 32px; }
+.info-contact { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .info-document a { transition: text-decoration-color .2s var(--ease-out); }
+}
+@media print {
+  .header-bar, .neo-footer, .skip-link, .info-contents { display: none; }
+  .info-document { width: 100%; padding: 0; }
+  .info-document details { break-inside: avoid; }
+}

@@ -6,6 +6,7 @@ const STYLES = [
   'https://cdn.neorgon.org/v1.0.0/styles/base.css',
   'https://cdn.neorgon.org/v1.0.0/header/season.css',
 ];
+const SHELL_PATHS = new Set(['./', './index.html'].map(file => new URL(file, self.location.href).pathname));
 const localAssets = new Set(self.ORBIT_SHELL.files.map(file => new URL(file, self.location.href).href));
 
 self.addEventListener('install', event => {
@@ -43,7 +44,11 @@ self.addEventListener('message', event => {
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
   const url = new URL(event.request.url);
-  const navigation = event.request.mode === 'navigate' && url.origin === self.location.origin;
+  // Only the app's own page is answered from the cache. Other pages on this
+  // origin (the Kurukuru support and privacy pages) go to the network, or a
+  // returning visitor would get the wheel in their place.
+  const navigation = event.request.mode === 'navigate' && url.origin === self.location.origin &&
+    SHELL_PATHS.has(url.pathname);
   if (!navigation && !localAssets.has(url.href) && !STYLES.includes(url.href)) return;
   event.respondWith((async () => {
     const cache = await caches.open(CACHE);
