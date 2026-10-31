@@ -114,8 +114,12 @@ function diagram(state, candidates, prefix, labels, marks) {
 function choice(node, index, state, marks, nested = false) {
   const row = html('div', 'wheel-choice-row');
   const choose = actionButton('select', node.id, 'wheel-option');
-  choose.setAttribute('aria-label', `Select ${node.label}`);
-  if (!nested) choose.append(html('span', 'wheel-order', String(index + 1).padStart(2, '0')));
+  // The visible name labels the button; the list conveys order and aria-pressed the selection.
+  if (!nested) {
+    const order = html('span', 'wheel-order', String(index + 1).padStart(2, '0'));
+    order.setAttribute('aria-hidden', 'true');
+    choose.append(order);
+  }
   const icon = html('span', 'wheel-option-icon');
   icon.style.setProperty('--wheel-color', colorOf(node));
   icon.append(createIcon(node.icon));
@@ -124,6 +128,7 @@ function choice(node, index, state, marks, nested = false) {
   const badges = html('span', 'wheel-badges');
   const current = html('span', 'wheel-current-badge', 'Current');
   const selected = html('span', 'wheel-selected-badge', 'Selected');
+  selected.setAttribute('aria-hidden', 'true');
   current.hidden = true; selected.hidden = true;
   badges.append(current, selected); copy.append(badges); choose.append(icon, copy);
   marks.push({ element: choose, id: node.id, current, selected });
@@ -183,7 +188,6 @@ export function createView(state, candidates, prefix, disclosures) {
   const zoomOut = actionButton('zoom-out', null, 'wheel-control', '−');
   zoomOut.setAttribute('aria-label', 'Zoom out on wheel');
   const zoomReset = actionButton('zoom-reset', null, 'wheel-control wheel-zoom-reset', '100%');
-  zoomReset.setAttribute('aria-label', 'Reset wheel zoom to 100%');
   const zoomIn = actionButton('zoom-in', null, 'wheel-control', '+');
   zoomIn.setAttribute('aria-label', 'Zoom in on wheel');
   zoom.append(zoomOut, zoomReset, zoomIn); toolbar.append(zoom); content.append(toolbar);

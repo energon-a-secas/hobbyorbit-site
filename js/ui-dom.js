@@ -34,11 +34,16 @@ export function field(label, control, hint = '') {
   if (hint) wrap.append(el('p', 'field-hint', hint));
   return wrap;
 }
+// Building a formatter is costly; a long journal formats two dates per entry.
+const dateFormats = new Map();
 export function dateLabel(value, includeTime = true) {
-  return new Intl.DateTimeFormat(undefined, {
-    month: 'short', day: 'numeric', year: 'numeric',
-    ...(includeTime ? { hour: 'numeric', minute: '2-digit' } : {}),
-  }).format(new Date(value));
+  if (!dateFormats.has(includeTime)) {
+    dateFormats.set(includeTime, new Intl.DateTimeFormat(undefined, {
+      month: 'short', day: 'numeric', year: 'numeric',
+      ...(includeTime ? { hour: 'numeric', minute: '2-digit' } : {}),
+    }));
+  }
+  return dateFormats.get(includeTime).format(new Date(value));
 }
 export const moodLabel = (id) => MOODS.find((mood) => mood.id === id)?.label || id;
 export function announce(message, isError = false) {

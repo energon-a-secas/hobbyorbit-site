@@ -53,7 +53,7 @@ export function renderManager(state, ui) {
     up.setAttribute('aria-label', `Move ${node.label} up`);
     down.setAttribute('aria-label', `Move ${node.label} down`);
     const explore = button('Open', 'focus', 'btn btn--quiet', id);
-    explore.setAttribute('aria-label', `Manage subcategories of ${node.label}`);
+    explore.setAttribute('aria-label', `Open ${node.label} to manage what is inside`);
     const edit = button('Edit', 'edit-node', 'btn btn--quiet', id);
     edit.setAttribute('aria-label', `Edit ${node.label}`);
     controls.append(up, down, explore, edit);

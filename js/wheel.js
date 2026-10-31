@@ -42,8 +42,6 @@ export function createWheel(element, options = {}) {
       if (mark.element.tagName === 'BUTTON') {
         mark.element.setAttribute('aria-pressed', String(selected));
         mark.current.hidden = !current; mark.selected.hidden = !selected;
-        const node = state.nodes[mark.id];
-        mark.element.setAttribute('aria-label', `Select ${node.label}${current ? ', current hobby' : ''}`);
       }
     }
   }
@@ -51,6 +49,7 @@ export function createWheel(element, options = {}) {
   function showZoom() {
     view.stage.style.width = `${zoom * 100}%`;
     view.zoomReset.textContent = `${Math.round(zoom * 100)}%`;
+    view.zoomReset.setAttribute('aria-label', `${Math.round(zoom * 100)}% zoom. Reset the wheel to 100%`);
     view.zoomOut.disabled = zoom <= 1; view.zoomIn.disabled = zoom >= 2;
     if (zoom > 1) {
       view.viewport.tabIndex = 0;
