@@ -24,7 +24,6 @@ export function startPwa(store) {
   update.hidden = true;
   const updateNote = document.createElement('p');
   updateNote.hidden = true;
-  updateNote.textContent = 'An update is ready. Save your check-in draft before reloading.';
   slot.replaceChildren(heading, status, install, instructions, privacy, updateNote, update);
   let installEvent = null;
   let applyUpdate = false;
@@ -68,16 +67,34 @@ export function startPwa(store) {
     status.textContent = 'Offline installation needs HTTPS or localhost. Your journal still works here.';
     return;
   }
+  let registration = null;
+  let controller = navigator.serviceWorker.controller;
+  function offerUpdate(message) {
+    updateNote.textContent = message;
+    update.hidden = updateNote.hidden = false;
+  }
   navigator.serviceWorker.addEventListener('controllerchange', () => {
+    const previous = controller;
+    controller = navigator.serviceWorker.controller;
     if (applyUpdate) location.reload();
+    // Another tab applied an update; this page still runs the earlier files.
+    else if (previous) offerUpdate('A new version started in another tab. Save your check-in draft, then reload.');
+  });
+  update.addEventListener('click', () => {
+    if (!registration?.waiting) { location.reload(); return; }
+    applyUpdate = true;
+    registration.waiting.postMessage({type: 'APPLY_UPDATE'});
   });
   function readyStatus() {
     status.textContent = navigator.onLine ? 'Ready to use offline on this device.' : 'Offline. Your wheel and journal are available.';
   }
-  navigator.serviceWorker.register('./sw.js', {updateViaCache: 'none'}).then(registration => {
+  navigator.serviceWorker.register('./sw.js', {updateViaCache: 'none'}).then(result => {
+    registration = result;
+    // A first install also passes through "installed" before it activates.
+    // Only a worker waiting behind an active one is an update.
     function waitingUpdate() {
-      if (!registration.waiting) return;
-      update.hidden = updateNote.hidden = false;
+      if (!registration.waiting || !registration.active) return;
+      offerUpdate('An update is ready. Save your check-in draft before reloading.');
     }
     waitingUpdate();
     registration.addEventListener('updatefound', () => {
@@ -88,11 +105,6 @@ export function startPwa(store) {
           status.textContent = 'Offline setup did not finish. Reconnect and reload to try again.';
         }
       });
-    });
-    update.addEventListener('click', () => {
-      if (!registration.waiting) return;
-      applyUpdate = true;
-      registration.waiting.postMessage({type: 'APPLY_UPDATE'});
     });
     return navigator.serviceWorker.ready;
   }).then(() => {

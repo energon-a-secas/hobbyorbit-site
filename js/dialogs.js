@@ -4,6 +4,8 @@ import { validateState, TRIGGERS } from './model.js';
 import { copyText, downloadText } from './neorgon-dom.js';
 import { el, button, option, field, iconBadge, moodLabel, announce } from './ui-dom.js';
 
+const count = (n, one, many) => `${n} ${n === 1 ? one : many}`;
+
 function dialogShell(title, wide = false) {
   const opener = document.activeElement;
   const dialog = el('dialog', `dialog${wide ? ' dialog--wide' : ''}`);
@@ -214,7 +216,7 @@ export function openImport(ctx, text) {
   }
   confirmAction({
     title: 'Replace this device’s wheel and journal?',
-    description: `This backup contains ${Object.keys(backup.state.nodes).length} hobbies and ${backup.state.journal.length} journal entries. Importing replaces what is here now. Download a backup first if you want to keep both.`,
+    description: `This backup contains ${count(Object.keys(backup.state.nodes).length, 'hobby', 'hobbies')} and ${count(backup.state.journal.length, 'journal entry', 'journal entries')}. Importing replaces what is here now. Download a backup first if you want to keep both.`,
     content: recoveryContent,
     label: preserveConflict ? 'Keep originals and import' : 'Replace and import', danger: true,
     onConfirm: () => {
@@ -238,7 +240,7 @@ export function openLock(ctx) {
   const submit = button(state.locked ? 'Unlock current hobby' : 'Stay with this hobby', null, 'btn btn--primary'); submit.type = 'submit'; form.append(submit);
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    const result = ctx.dispatch({ type: 'setLock', locked: !state.locked, trigger: trigger.value, note: note.value });
+    const result = ctx.dispatch({ type: 'setLock', locked: !state.locked, trigger: trigger.value.trim(), note: note.value });
     if (!result.ok) modal.fail(result.error);
     else { announce(state.locked ? 'You are open to a change. Your current hobby is still here.' : 'Your current hobby is locked in.'); modal.close(); }
   }); modal.body.append(form); modal.show();

@@ -135,7 +135,7 @@ export function renderPatterns(state) {
     observations('Changes you recorded', data.transitions, 'A second different hobby or rest will begin this list.', (item) => `${item.from} → ${item.to}`),
     observations(`Seasons · ${state.settings.hemisphere === 'south' ? 'Southern' : 'Northern'} hemisphere`, data.seasons, 'No seasonal records yet.'),
   );
-  region.append(count, sequence, grid, el('p', 'patterns-footnote muted', 'Counts describe what you recorded, not why it happened or what comes next. Trigger counts include lock and unlock notes. Seasons follow the local date recorded with each check-in.'));
+  region.append(count, sequence, grid, el('p', 'patterns-footnote muted', 'Counts describe what you recorded, not why it happened or what comes next. Trigger counts include triggers added when locking or unlocking. Seasons follow the local date recorded with each check-in.'));
 }
 
 export function renderStorage(store) {

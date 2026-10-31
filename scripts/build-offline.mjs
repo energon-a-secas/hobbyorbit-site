@@ -6,7 +6,7 @@ import path from 'node:path';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const files = ['index.html', 'favicon.svg', 'favicon.ico', 'apple-touch-icon.png',
   'web-app-manifest-192x192.png', 'web-app-manifest-512x512.png',
-  'energon-classic-logo.png', 'site.webmanifest', 'data/catalog.json'];
+  'energon-classic-logo.png', 'logo.svg', 'site.webmanifest', 'data/catalog.json'];
 for (const directory of ['js', 'css']) {
   for (const name of (await readdir(path.join(root, directory))).sort()) {
     if (/\.(?:js|css)$/.test(name)) files.push(`${directory}/${name}`);

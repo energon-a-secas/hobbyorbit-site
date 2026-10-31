@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { createInitialState, validateState, applyAction, getNodePath, summarize } from '../js/model.js';
 import { createStore, STORAGE_KEY } from '../js/state.js';
 import { loadCatalog, searchCatalog, catalogPath } from '../js/catalog.js';
@@ -40,13 +40,26 @@ function memoryStorage(entries = []) {
   };
 }
 
-test('catalog preserves complete source membership, order, provenance and nested trees', () => {
+// The source comparison needs the sibling Aficion checkout that build-catalog.mjs reads.
+const aficionSource = new URL('../../aficion-site/data/', import.meta.url);
+const aficionMissing = !existsSync(new URL('atlas.json', aficionSource)) &&
+  'needs the sibling aficion-site checkout used by scripts/build-catalog.mjs';
+
+test('catalog keeps its counts, nested trees, safe paths and search', () => {
   assert.equal(Object.keys(catalog.nodes).length, 531);
   assert.deepEqual(catalog.counts, { categories: 23, hobbies: 330, inner: 178 });
-  const source = new URL('../../aficion-site/data/', import.meta.url);
-  const atlas = JSON.parse(readFileSync(new URL('atlas.json', source), 'utf8'));
+  assert.equal(catalog.nodes['core.photography'].children.length, 6);
+  assert.equal(catalogPath(catalog, 'core.photography.macro').length, 3);
+  assert.deepEqual(catalogPath(catalog, '__proto__'), []);
+  assert.ok(searchCatalog(catalog, 'photography').some(node => node.id === 'core.photography.macro'));
+  assert.ok(searchCatalog(catalog, 'music').every(node => !node.id.startsWith('category.')));
+  assert.equal(searchCatalog(catalog, 'no-such-activity-xyz').length, 0);
+});
+
+test('catalog preserves complete source membership, order and provenance', { skip: aficionMissing }, () => {
+  const atlas = JSON.parse(readFileSync(new URL('atlas.json', aficionSource), 'utf8'));
   for (const id of atlas.clusters) {
-    const cluster = JSON.parse(readFileSync(new URL(`clusters/${id}.json`, source), 'utf8'));
+    const cluster = JSON.parse(readFileSync(new URL(`clusters/${id}.json`, aficionSource), 'utf8'));
     const order = cluster.layout.order ?? [];
     assert.deepEqual(catalog.nodes[`category.${id}`].children,
       [...order, ...cluster.nodes.map(node => node.id).filter(nodeId => !order.includes(nodeId))]);
@@ -55,12 +68,6 @@ test('catalog preserves complete source membership, order, provenance and nested
       assert.equal(catalog.nodes[node.id].sourceId, node.id);
     }
   }
-  assert.equal(catalog.nodes['core.photography'].children.length, 6);
-  assert.equal(catalogPath(catalog, 'core.photography.macro').length, 3);
-  assert.deepEqual(catalogPath(catalog, '__proto__'), []);
-  assert.ok(searchCatalog(catalog, 'photography').some(node => node.id === 'core.photography.macro'));
-  assert.ok(searchCatalog(catalog, 'music').every(node => !node.id.startsWith('category.')));
-  assert.equal(searchCatalog(catalog, 'no-such-activity-xyz').length, 0);
 });
 
 test('catalog load validates data and reports actionable network and malformed errors', async () => {

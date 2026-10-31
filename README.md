@@ -86,7 +86,7 @@ python3 -m http.server 8901
 Visit `http://localhost:8901`. No build or package installation is needed to run it.
 
 ```bash
-node --test tests/model.test.mjs
+node --test tests/model.test.mjs   # the Aficion source check runs when ../aficion-site exists
 node scripts/build-catalog.mjs   # requires the sibling aficion-site checkout
 node scripts/build-offline.mjs  # refresh after changing app files or assets
 node scripts/build-offline.mjs --check
