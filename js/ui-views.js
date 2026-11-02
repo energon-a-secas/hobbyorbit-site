@@ -1,5 +1,6 @@
 import { getNodePath, summarize } from './model.js';
 import { byId, el, button, iconBadge, dateLabel, moodLabel, emptyState } from './ui-dom.js';
+import { reservesSection } from './ui-reserves.js';
 
 export function renderCurrent(state) {
   const region = byId('current-state');
@@ -114,7 +115,7 @@ export function renderPatterns(state) {
   const region = byId('patterns-content');
   region.replaceChildren();
   if (!data.checkins) {
-    region.append(emptyState('Let a few moments collect.', 'As you check in, this space will show your recorded sequence, feelings, and triggers. There is no schedule to keep.', button('Make a check-in', 'go-checkin', 'btn btn--primary')));
+    region.append(emptyState('Let a few moments collect.', 'As you check in, this space will show your recorded sequence, feelings, and triggers. There is no schedule to keep.', button('Make a check-in', 'go-checkin', 'btn btn--primary')), reservesSection(state));
     return;
   }
   const count = el('p', 'pattern-summary');
@@ -135,7 +136,7 @@ export function renderPatterns(state) {
     observations('Changes you recorded', data.transitions, 'A second different hobby or rest will begin this list.', (item) => `${item.from} → ${item.to}`),
     observations(`Seasons · ${state.settings.hemisphere === 'south' ? 'Southern' : 'Northern'} hemisphere`, data.seasons, 'No seasonal records yet.'),
   );
-  region.append(count, sequence, grid, el('p', 'patterns-footnote muted', 'Counts describe what you recorded, not why it happened or what comes next. Trigger counts include triggers added when locking or unlocking. Seasons follow the local date recorded with each check-in.'));
+  region.append(count, sequence, grid, el('p', 'patterns-footnote muted', 'Counts describe what you recorded, not why it happened or what comes next. Trigger counts include triggers added when locking or unlocking. Seasons follow the local date recorded with each check-in.'), reservesSection(state));
 }
 
 export function renderStorage(store) {

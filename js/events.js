@@ -1,6 +1,7 @@
 import { downloadText } from './neorgon-dom.js';
 import { byId, announce, showError } from './ui-dom.js';
 import { openCatalog, openEditor, openShare, openImport, openLock, confirmAction } from './dialogs.js';
+import { openReserveCheck, openReservesAbout } from './ui-reserves.js';
 
 export function bindEvents(ctx) {
   const { ui, store } = ctx;
@@ -32,6 +33,13 @@ export function bindEvents(ctx) {
     },
     'go-checkin': goCheckin,
     'toggle-lock': () => openLock(ctx),
+    'reserves-check': () => openReserveCheck(ctx),
+    'reserves-about': () => openReservesAbout(),
+    'delete-reserve'(target) {
+      confirmAction({ title: 'Delete this reading?', description: 'This removes just this reserves reading. Your journal and current hobby stay as they are.', label: 'Delete reading', danger: true,
+        onConfirm: () => { const result = ctx.dispatch({ type: 'deleteReserve', id: target.dataset.id }); if (result.ok) announce('Reading deleted.'); return result; },
+      });
+    },
     share: () => openShare(ctx),
     export() { downloadText(store.exportBackup(), `hobby-orbit-backup-${new Date().toISOString().slice(0, 10)}.json`, 'application/json'); announce('Your backup download is ready. It includes your private notes.'); },
     recovery(target) {
@@ -88,7 +96,7 @@ export function bindEvents(ctx) {
   });
   byId('settings-form').addEventListener('submit', (event) => {
     event.preventDefault();
-    const result = ctx.dispatch({ type: 'settings', hemisphere: byId('hemisphere').value, motion: byId('motion').value });
+    const result = ctx.dispatch({ type: 'settings', hemisphere: byId('hemisphere').value, motion: byId('motion').value, reserves: byId('reserves-setting').value });
     if (result.ok) announce(result.saved ? 'Preferences saved.' : 'Preferences changed for this session.');
   });
   byId('import-file').addEventListener('change', async (event) => {

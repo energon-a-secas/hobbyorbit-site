@@ -45,6 +45,7 @@ empty and stays on your device.
 - **Your arrangement** -- Add catalog or custom hobbies, reorder, change colors and icons
 - **Check-ins** -- Choose a hobby or rest, describe a feeling, and add triggers and notes
 - **Lock in** -- Keep the current hobby while continuing to explore suggestions
+- **Your reserves** -- Rate energy, willpower, and flow; a plain rule of thumb says when to rest or not to overextend
 - **Observed patterns** -- Recorded sequences, transitions, moods, triggers, and seasons
 - **Private sharing** -- Preview an update; notes are included only when selected
 - **Install and go offline** -- Use the cached app after the first successful visit
@@ -64,8 +65,15 @@ An import replaces the current device's wheel and journal after confirmation.
 The six-category starter wheel is editable sample content. It is not a record of
 your interests. The catalog reuses [Aficion](https://aficion.neorgon.com/): 23
 categories, 330 hobbies, and 178 deeper activities. Seasons use your check-ins'
-recorded local dates and the hemisphere selected in Settings. Counts describe
-what was recorded and do not claim to predict a switch or establish its cause.
+recorded local dates and the hemisphere in Settings, which a new wheel matches to
+the device's time zone and you can change. Counts describe what was recorded and
+do not claim to predict a switch or establish its cause.
+
+Reserves are three self-ratings from 1 to 5. The reading is the lower of energy
+and willpower: 1.5 or below means rest, 3 is fine without extra demands, and 5
+has no penalties. It is a personal rule of thumb, not a medical measure, and it
+does not adjust for age or lifestyle. Readings never change your current hobby
+or add journal entries.
 
 ---
 
@@ -110,6 +118,8 @@ hobbyorbit-site/
 ├── js/
 │   ├── app.js          # Entry point
 │   ├── model.js        # Validated tree and journal mutations
+│   ├── reserves.js     # Reserves rule of thumb
+│   ├── seasons.js      # Time-zone hemisphere match
 │   ├── state.js        # Local persistence and recovery
 │   ├── wheel.js        # SVG wheel controller
 │   ├── render.js       # View updates

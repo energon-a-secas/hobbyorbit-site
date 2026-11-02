@@ -3,6 +3,20 @@ import { MOODS, TRIGGERS } from './model.js';
 import { prefersReducedMotion } from './neorgon-dom.js';
 import { byId, el, button, option, iconBadge, announce, showError } from './ui-dom.js';
 import { renderCurrent, renderManager, renderJournal, renderPatterns, renderStorage, renderBreadcrumb } from './ui-views.js';
+import { renderReserves, runningOnEmpty } from './ui-reserves.js';
+import { localDateOf } from './model-validation.js';
+import { detectHemisphere } from './seasons.js';
+
+function showHemisphereMatch(state) {
+  const match = detectHemisphere();
+  const hint = byId('hemisphere-match');
+  hint.hidden = !match;
+  if (!match) return;
+  const name = match.hemisphere === 'south' ? 'Southern' : 'Northern';
+  hint.textContent = match.hemisphere === state.settings.hemisphere
+    ? `Matches your device's time zone (${match.place}).`
+    : `Your device's time zone (${match.place}) suggests the ${name} hemisphere. Your saved choice stays until you change it.`;
+}
 
 function buildForm(state) {
   const moods = byId('mood-options');
@@ -19,6 +33,7 @@ function buildForm(state) {
   trigger.append(option('Something else…', '__custom__'));
   byId('hemisphere').value = state.settings.hemisphere;
   byId('motion').value = state.settings.motion;
+  byId('reserves-setting').value = state.settings.reserves;
 }
 
 function updateHobbyOptions(state, keepSelection = true) {
@@ -39,7 +54,7 @@ function updateHobbyOptions(state, keepSelection = true) {
 export function createInterface(catalog, store) {
   const ui = { view: 'wheel', focusId: null, selectedId: null, spinning: false, spinId: 0 };
   let treeSignature = ''; let wheelSignature = ''; let optionsSignature = '';
-  let preferencesSignature = '';
+  let preferencesSignature = ''; let reservesSignature = '';
   let renderedJournal = null; let renderedPatterns = null;
   const ctx = { catalog, store, ui, wheel: null };
   const renderActiveHistory = (state) => {
@@ -72,6 +87,7 @@ export function createInterface(catalog, store) {
       copy.append(el('p', 'muted', 'Spin, choose a slice, or follow your own feeling.'));
       region.replaceChildren(copy);
     }
+    if (runningOnEmpty(state)) copy.append(el('p', 'field-hint', 'Your reserves read empty today. Resting is a valid check-in.'));
   };
   ctx.setView = (view, focus = false) => {
     if (!['wheel', 'journal', 'patterns', 'settings'].includes(view)) return;
@@ -96,6 +112,7 @@ export function createInterface(catalog, store) {
     byId('checkin-trigger').value = ''; byId('checkin-custom-trigger').value = ''; byId('checkin-note').value = '';
     byId('custom-trigger-field').hidden = true; showError('checkin-error');
     byId('hemisphere').value = state.settings.hemisphere; byId('motion').value = state.settings.motion;
+    byId('reserves-setting').value = state.settings.reserves;
   };
   ctx.refresh = () => {
     const state = store.getState();
@@ -111,6 +128,9 @@ export function createInterface(catalog, store) {
     }
     if (tree !== treeSignature || ctx.lastFocus !== ui.focusId) { renderManager(state, ui); treeSignature = tree; ctx.lastFocus = ui.focusId; }
     renderBreadcrumb(state, ui); renderCurrent(state); ctx.renderSuggestion();
+    // The date is part of the key so a reading from yesterday is shown as earlier.
+    const reserves = JSON.stringify([state.reserves.at(-1), state.settings.reserves, localDateOf(new Date())]);
+    if (reserves !== reservesSignature) { renderReserves(state); reservesSignature = reserves; }
     byId('journal-count').textContent = String(state.journal.length);
     renderActiveHistory(state); renderStorage(store);
     byId('starter-label').hidden = !state.starter;
@@ -122,6 +142,8 @@ export function createInterface(catalog, store) {
     const preferences = JSON.stringify(state.settings);
     if (preferences !== preferencesSignature) {
       byId('hemisphere').value = state.settings.hemisphere; byId('motion').value = state.settings.motion;
+      byId('reserves-setting').value = state.settings.reserves;
+      showHemisphereMatch(state);
       preferencesSignature = preferences;
     }
   };

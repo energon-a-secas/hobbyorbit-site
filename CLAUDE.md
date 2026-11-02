@@ -22,6 +22,8 @@ the user reloads; they must never clear personal data.
 - `data/catalog.json` is generated from the sibling Aficion site's catalog with
   `node scripts/build-catalog.mjs`. Aficion's source is read-only here.
 - `js/model.js` owns mutations, with validation and observation helpers alongside.
+- `js/reserves.js` holds the reserves rule of thumb; `js/seasons.js` the time-zone
+  hemisphere match. Both are pure and tested.
 - `js/state.js` owns the versioned local journal, recovery, and backups.
 - `js/wheel.js` and its helpers own SVG geometry, selection, zoom, and spin.
 - `js/render.js`, `js/events.js`, `js/dialogs.js`, and `js/ui-*.js` own UI.
@@ -31,7 +33,8 @@ the user reloads; they must never clear personal data.
 
 ## Invariants
 
-A spin and a reorder never change current activity or create a journal entry.
+A spin, a reorder, and a reserves reading never change current activity or
+create a journal entry.
 Current activity, suggested activity, and the check-in draft are separate values.
 Only explicit check-ins change current activity. Locking blocks a change of
 activity, including rest, and allows repeated moods for the current hobby.
@@ -39,6 +42,10 @@ Deleted or renamed hobbies keep their historical snapshots. Empty history is
 honest; never seed it with example personal records.
 
 Never rename `hobbyorbit:state:v1` or silently overwrite malformed/future data.
+Schema 1 saves upgrade in memory and are rewritten only by the next change. The
+time-zone hemisphere only defaults a new wheel; it never replaces a saved choice.
+Reserves stay a visible rule of thumb (the lower of energy and willpower), never
+a prediction, diagnosis, or age-based score.
 Blocked/quota-limited storage has a persistent warning and an export path. Notes
 are shared only after explicit opt-in and preview. No analytics is enabled.
 

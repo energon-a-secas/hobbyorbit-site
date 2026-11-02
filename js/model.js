@@ -1,7 +1,7 @@
 import { MOODS, TRIGGERS, STARTER_IDS } from './model-constants.js';
 import {
-  assertState, cloneData, exactFields, requireValue, identifier,
-  displayFields, moodField, textField, booleanField, validateSettings, instant,
+  assertState, cloneData, exactFields, requireValue, identifier, upgradeState, SCHEMA,
+  displayFields, moodField, textField, booleanField, validateSettings, instant, level, demandField, localDateOf,
 } from './model-validation.js';
 export { MOODS, TRIGGERS };
 export { summarize } from './model-summary.js';
@@ -14,8 +14,10 @@ const actionFields = {
   removeNode: ['type', 'id'],
   checkin: ['type', 'nodeId', 'mood', 'trigger', 'note'],
   setLock: ['type', 'locked', 'trigger', 'note'],
-  settings: ['type', 'hemisphere', 'motion'],
+  settings: ['type', 'hemisphere', 'motion', 'reserves'],
   deleteEntry: ['type', 'id'],
+  reserve: ['type', 'energy', 'willpower', 'flow', 'demand'],
+  deleteReserve: ['type', 'id'],
 };
 
 function nodeSnapshot(node) {
@@ -45,7 +47,8 @@ function copySubtree(catalog, id, into) {
   }
 }
 
-export function createInitialState(catalog) {
+/** hemisphere is only a default for a new wheel, such as the device's time-zone match. */
+export function createInitialState(catalog, hemisphere = 'north') {
   const nodes = Object.create(null);
   for (const id of STARTER_IDS) {
     requireValue(Object.hasOwn(catalog.nodes, id), `The catalog is missing starter category ${id}.`);
@@ -54,17 +57,18 @@ export function createInitialState(catalog) {
     nodes[id] = root;
     for (const child of root.children) copySubtree(catalog, child, nodes);
   }
-  const state = { schema: 1, starter: true, nodes, rootIds: [...STARTER_IDS],
-    current: null, currentSince: null, mood: 'curious', locked: false, journal: [],
-    settings: { hemisphere: 'south', motion: 'system' } };
+  const state = { schema: SCHEMA, starter: true, nodes, rootIds: [...STARTER_IDS],
+    current: null, currentSince: null, mood: 'curious', locked: false, journal: [], reserves: [],
+    settings: { hemisphere, motion: 'system', reserves: 'show' } };
   assertState(state);
   return state;
 }
 
 export function validateState(value) {
   try {
-    assertState(value);
-    return { ok: true, state: cloneData(value) };
+    const state = upgradeState(value);
+    assertState(state);
+    return { ok: true, state: cloneData(state) };
   } catch (error) {
     return { ok: false, error: error instanceof Error ? error.message : 'The data could not be validated.' };
   }
@@ -92,15 +96,18 @@ function uniqueId(prefix, exists) {
   throw new Error('Could not create a unique ID. Please try again.');
 }
 
-function addEntry(state, action, kind, previousId, now) {
+// A record's UTC instant and the local calendar date it was made on, never earlier than the last record.
+function stamp(now, previous, message) {
   requireValue(now instanceof Date && Number.isFinite(now.getTime()), 'The device date and time are invalid.');
   const at = now.toISOString();
   instant(at);
-  const previous = state.journal.at(-1);
-  requireValue(!previous || Date.parse(at) >= Date.parse(previous.at),
+  requireValue(!previous || Date.parse(at) >= Date.parse(previous.at), message);
+  return { at, localDate: localDateOf(now) };
+}
+
+function addEntry(state, action, kind, previousId, now) {
+  const { at, localDate } = stamp(now, state.journal.at(-1),
     'The device clock is earlier than the latest journal entry. Correct it before checking in.');
-  const localDate = [String(now.getFullYear()).padStart(4, '0'),
-    String(now.getMonth() + 1).padStart(2, '0'), String(now.getDate()).padStart(2, '0')].join('-');
   const ids = new Set(state.journal.map(entry => entry.id));
   state.journal.push({ id: uniqueId('entry', id => ids.has(id)), at, localDate, kind,
     hobby: state.current && nodeSnapshot(state.current), previousId,
@@ -190,9 +197,23 @@ export function applyAction(state, action, catalog, now = new Date()) {
       addEntry(next, action, action.locked ? 'lock' : 'unlock', next.current.id, now);
     }
   } else if (action.type === 'settings') {
-    const settings = { hemisphere: action.hemisphere, motion: action.motion };
+    const settings = { hemisphere: action.hemisphere, motion: action.motion, reserves: action.reserves };
     validateSettings(settings);
     next.settings = settings;
+  } else if (action.type === 'reserve') {
+    // A reading stands alone: it never changes current activity or adds a journal entry.
+    level(action.energy, 'Energy'); level(action.willpower, 'Willpower'); level(action.flow, 'Flow');
+    demandField(action.demand);
+    const { at, localDate } = stamp(now, next.reserves.at(-1),
+      'The device clock is earlier than your latest reserves reading. Correct it before saving.');
+    const ids = new Set(next.reserves.map(reading => reading.id));
+    next.reserves.push({ id: uniqueId('reserve', id => ids.has(id)), at, localDate,
+      energy: action.energy, willpower: action.willpower, flow: action.flow, demand: action.demand });
+  } else if (action.type === 'deleteReserve') {
+    identifier(action.id, 'Reserves reading ID');
+    const index = next.reserves.findIndex(reading => reading.id === action.id);
+    requireValue(index !== -1, 'That reading no longer exists.');
+    next.reserves.splice(index, 1);
   } else if (action.type === 'deleteEntry') {
     identifier(action.id, 'Journal entry ID');
     const index = next.journal.findIndex(entry => entry.id === action.id);

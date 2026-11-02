@@ -4,6 +4,7 @@ flowchart LR
     M --> W[SVG wheel and zoom]
     W -->|suggestion only| U[Check-in form]
     U -->|explicit save| S[State store]
+    R[Reserves quick check] -->|reading, never a check-in| S
     S --> L[(Browser storage)]
     S --> J[Journal and observed patterns]
     S --> B[JSON backup and recovery]

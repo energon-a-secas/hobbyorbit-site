@@ -6,7 +6,7 @@ import { el, button, option, field, iconBadge, moodLabel, announce } from './ui-
 
 const count = (n, one, many) => `${n} ${n === 1 ? one : many}`;
 
-function dialogShell(title, wide = false) {
+export function dialogShell(title, wide = false) {
   const opener = document.activeElement;
   const dialog = el('dialog', `dialog${wide ? ' dialog--wide' : ''}`);
   const header = el('div', 'dialog-header');

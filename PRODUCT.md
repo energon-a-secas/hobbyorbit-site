@@ -18,6 +18,8 @@ been recorded if wanted, and the next visit can pick up from that record.
 - A spin suggests. Only a deliberate check-in records current activity.
 - The wheel's planned order and the journal's observed sequence stay distinct.
 - Not being in the mood and resting are valid states, with no streak penalties.
+- Reserves (energy, willpower, flow) are self-ratings with one visible rule of
+  thumb that favours rest when they run low, never a score to keep up.
 - Personal notes stay on this device; sharing shows an explicit preview.
 - The user confirmed an installable web app as the first release.
 

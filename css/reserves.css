@@ -1,0 +1,84 @@
+/* Reserves widget, quick check, explainer, and Patterns history.
+   Status steps are reserved for state (low, empty) and always sit beside an
+   icon and words, so colour never carries the meaning alone. */
+:root {
+  --status-warning: #fab219;
+  --status-critical: #d03b3b;
+}
+
+.reserves-card { margin-top: var(--space-4); padding: var(--space-6); background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.reserves-head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+.reserves-head h3 { font-size: var(--text-lg); }
+.reserves-head .btn { padding-inline: var(--space-2); font-size: var(--text-xs); }
+.reserves-card > .muted { margin-top: var(--space-2); }
+.reserves-card > .btn { margin-top: var(--space-4); }
+.reserves-when { font-size: var(--text-xs); }
+
+.reserve-meters { display: grid; gap: var(--space-3); margin-top: var(--space-4); }
+.reserve-meter { display: grid; grid-template-columns: 76px minmax(0, 1fr) 28px; align-items: center; gap: var(--space-3); font-size: var(--text-sm); }
+.reserve-name { color: var(--text-secondary); }
+.reserve-value { color: var(--text-primary); font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
+/* The unfilled track is a lighter step of the fill's own colour. */
+.reserve-track { --meter: var(--accent); height: 8px; border-radius: 999px; background: color-mix(in srgb, var(--meter) 18%, transparent); overflow: hidden; }
+.reserve-track[data-status="warning"] { --meter: var(--status-warning); }
+.reserve-track[data-status="critical"] { --meter: var(--status-critical); }
+.reserve-fill { display: block; height: 100%; border-radius: inherit; background: var(--meter); }
+.reserves-card.is-stale .reserve-meters { opacity: .5; }
+
+.reserves-zone { display: flex; align-items: flex-start; gap: var(--space-2); margin-top: var(--space-4); font-size: var(--text-sm); color: var(--text-secondary); }
+.reserves-zone svg { flex: 0 0 auto; margin-top: 3px; color: var(--accent); }
+.reserves-zone[data-status="warning"] svg { color: var(--status-warning); }
+.reserves-zone[data-status="critical"] svg { color: var(--status-critical); }
+.reserves-zone strong, .reserves-strain strong { color: var(--text-primary); }
+.reserves-strain { margin-top: var(--space-2); font-size: var(--text-sm); color: var(--text-secondary); }
+
+/* Quick check */
+input[type="range"] { min-height: 44px; padding: 0; border: 0; background: transparent; accent-color: var(--accent); }
+.reserve-field-top { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-3); }
+.reserve-field-top label { color: var(--text-secondary); font-size: var(--text-sm); font-weight: 600; }
+.reserve-output { font-weight: 600; font-variant-numeric: tabular-nums; }
+.reserve-ends { display: flex; justify-content: space-between; gap: var(--space-3); margin-top: var(--space-1); color: var(--text-muted); font-size: var(--text-xs); }
+.reserve-preview { padding: var(--space-3) var(--space-4); background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius); }
+.reserve-preview .reserves-zone { margin-top: 0; }
+
+/* Explainer */
+.reserve-terms { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--space-2) var(--space-4); margin: var(--space-3) 0 var(--space-4); font-size: var(--text-sm); }
+.reserve-terms dt { font-weight: 600; }
+.reserve-terms dd { margin: 0; color: var(--text-secondary); }
+.reserve-scale { list-style: none; display: grid; gap: var(--space-3); margin: var(--space-4) 0; }
+.reserve-scale li { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: var(--space-3); align-items: start; }
+.reserve-scale-range { padding-top: 1px; font-size: var(--text-sm); font-weight: 600; font-variant-numeric: tabular-nums; }
+.reserve-scale .reserves-zone { margin-top: 0; }
+.dialog-body h3 { margin-top: var(--space-6); font-size: var(--text-base); }
+.dialog-body > p + p { margin-top: var(--space-3); }
+
+/* Patterns */
+.reserves-section { margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--border); }
+.reserves-section > .muted { margin-top: var(--space-2); }
+.reserve-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); margin-top: var(--space-6); max-width: 880px; }
+.reserve-tile { min-width: 0; padding: var(--space-4); background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius); }
+.reserve-tile-label { color: var(--text-secondary); font-size: var(--text-sm); }
+.reserve-tile-value { margin-top: var(--space-1); font-size: var(--text-2xl); font-weight: 600; line-height: 1.2; }
+.reserve-tile-note { color: var(--text-muted); font-size: var(--text-xs); }
+.reserve-spark { display: block; max-width: 100%; height: auto; margin-top: var(--space-3); overflow: visible; }
+.reserve-spark polyline { fill: none; stroke: var(--text-muted); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.reserve-spark-hit { fill: transparent; }
+.reserve-spark-latest { fill: var(--accent); stroke: var(--bg); stroke-width: 2; pointer-events: none; }
+.reserve-zone-counts { max-width: 420px; margin-top: var(--space-6); }
+.reserve-zone-counts h4, .reserve-readings-title { margin-bottom: var(--space-2); }
+.reserve-readings-title { margin-top: var(--space-6); }
+.reserve-readings { list-style: none; max-width: 880px; }
+.reserve-readings li { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-4); padding: var(--space-3) 0; border-bottom: 1px solid var(--border); }
+.reserve-reading-body { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-3); min-width: 0; font-size: var(--text-sm); }
+.reserve-reading-body time { flex-basis: 100%; font-size: var(--text-xs); }
+.reserve-tag { gap: var(--space-1); }
+.reserve-tag svg { width: 12px; height: 12px; color: var(--accent); }
+.reserve-tag[data-status="warning"] svg { color: var(--status-warning); }
+.reserve-tag[data-status="critical"] svg { color: var(--status-critical); }
+.reserve-demand { font-size: var(--text-xs); }
+.reserves-empty { margin-top: var(--space-4); }
+
+@media (max-width: 760px) {
+  .reserves-card { padding: var(--space-4); }
+  .reserve-tiles { grid-template-columns: minmax(0, 1fr); }
+}

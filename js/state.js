@@ -1,6 +1,7 @@
 import { safeSet, safeRemove, storageAvailable } from './neorgon-persist.js';
 import { createInitialState, validateState, applyAction } from './model.js';
 import { exactFields, requireValue, instant, freezeData } from './model-validation.js';
+import { detectHemisphere } from './seasons.js';
 
 export const STORAGE_KEY = 'hobbyorbit:state:v1';
 const RECOVERY_KEY = 'hobbyorbit:recovery';
@@ -63,7 +64,8 @@ function decodeRecoveryArchive(raw) {
 
 export function createStore(catalog, options = {}) {
   const storage = options.storage ?? browserStorage();
-  let state = createInitialState(catalog);
+  // Only a new wheel takes the time-zone match; a saved choice is never changed.
+  let state = createInitialState(catalog, options.hemisphere ?? detectHemisphere()?.hemisphere ?? 'north');
   let status = { mode: 'saved', message: savedMessage };
   let recovery = null;
   let protectedOriginal = null;

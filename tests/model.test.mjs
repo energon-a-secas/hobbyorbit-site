@@ -4,10 +4,12 @@ import { existsSync, readFileSync } from 'node:fs';
 import { createInitialState, validateState, applyAction, getNodePath, summarize } from '../js/model.js';
 import { createStore, STORAGE_KEY } from '../js/state.js';
 import { loadCatalog, searchCatalog, catalogPath } from '../js/catalog.js';
+import { hemisphereFor } from '../js/seasons.js';
+import { capacity, zoneFor, strain, summarizeReserves } from '../js/reserves.js';
 
 const catalog = JSON.parse(readFileSync(new URL('../data/catalog.json', import.meta.url), 'utf8'));
 const copy = value => JSON.parse(JSON.stringify(value));
-const initial = () => createInitialState(catalog);
+const initial = () => createInitialState(catalog, 'south');
 const time = new Date('2026-10-19T12:00:00.000Z');
 const act = (state, action, at = time) => applyAction(state, action, catalog, at);
 const checkin = (nodeId = 'music.synths', extra = {}) => ({
@@ -15,7 +17,7 @@ const checkin = (nodeId = 'music.synths', extra = {}) => ({
 });
 const lock = locked => ({ type: 'setLock', locked, trigger: '', note: '' });
 const custom = parentId => ({ type: 'addCustom', label: 'My activity', icon: 'hobby', color: '#fca5a5', parentId });
-const settings = { type: 'settings', hemisphere: 'north', motion: 'reduce' };
+const settings = { type: 'settings', hemisphere: 'north', motion: 'reduce', reserves: 'hide' };
 const backup = state => JSON.stringify({ format: 'hobbyorbit-backup', version: 1,
   exportedAt: time.toISOString(), state });
 const recoveryKey = 'hobbyorbit:recovery';
@@ -107,7 +109,9 @@ test('starter is fresh, ordered, contains full inner trees and invents no histor
   assert.equal(state.currentSince, null);
   assert.equal(state.locked, false);
   assert.deepEqual(state.journal, []);
-  assert.deepEqual(state.settings, { hemisphere: 'south', motion: 'system' });
+  assert.deepEqual(state.settings, { hemisphere: 'south', motion: 'system', reserves: 'show' });
+  assert.deepEqual(state.reserves, []);
+  assert.equal(createInitialState(catalog).settings.hemisphere, 'north');
   for (const id of state.rootIds) {
     assert.deepEqual(state.nodes[id].children, catalog.nodes[id].children.slice(0, 3));
     for (const child of state.nodes[id].children) assert.deepEqual(state.nodes[child], catalog.nodes[child]);
@@ -211,7 +215,7 @@ test('invalid actions and oversized content fail without trimming or mutation', 
 test('validation rejects bad structure, enums, dates and unsafe keys without repairing', () => {
   const valid = copy(act(initial(), checkin()));
   const cases = [
-    state => { state.schema = 2; }, state => { state.extra = true; },
+    state => { state.schema = 3; }, state => { state.schema = 1; }, state => { state.extra = true; },
     state => { state.nodes['music.synths'].label = ' untrimmed'; },
     state => { state.nodes['music.synths'].color = '#fff'; },
     state => { state.rootIds.push(state.rootIds[0]); },
@@ -351,7 +355,7 @@ test('malformed, future and failed imports leave primary storage and session unc
   store.dispatch(checkin());
   const raw = storage.getItem(STORAGE_KEY);
   const state = store.getState();
-  const bad = ['{', '{}', backup({ ...initial(), schema: 2 }),
+  const bad = ['{', '{}', backup({ ...initial(), schema: 3 }),
     store.exportBackup().replace('"version": 1', '"version": 2')];
   for (const input of bad) {
     assert.equal(store.importBackup(input).ok, false);
@@ -472,4 +476,117 @@ test('there is no application retention cap or large-journal freeze stack limit'
   assert.equal(store.importBackup(backup(state)).ok, true);
   assert.equal(store.getState().journal.length, 12000);
   assert.equal(JSON.parse(store.exportBackup()).state.journal.at(-1).note, 'This note survives.');
+});
+
+const reading = (extra = {}) => ({ type: 'reserve', energy: 3, willpower: 3, flow: 3, demand: null, ...extra });
+// A schema 1 save, as the first release wrote it.
+const schemaOne = state => {
+  const old = copy(state);
+  old.schema = 1;
+  delete old.reserves;
+  delete old.settings.reserves;
+  return old;
+};
+
+test('seasons follow the time zone as a country match, then a stated locale region, else nothing', () => {
+  assert.deepEqual(hemisphereFor('America/Santiago'), { hemisphere: 'south', place: 'Santiago' });
+  assert.deepEqual(hemisphereFor('America/Argentina/Buenos_Aires'), { hemisphere: 'south', place: 'Buenos Aires' });
+  assert.equal(hemisphereFor('Australia/Perth').hemisphere, 'south');
+  assert.equal(hemisphereFor('Africa/Nairobi').hemisphere, 'south');
+  assert.equal(hemisphereFor('America/Bogota').hemisphere, 'north');
+  assert.equal(hemisphereFor('Europe/Madrid', 'es-CL').hemisphere, 'north');
+  assert.deepEqual(hemisphereFor('UTC', 'es-CL'), { hemisphere: 'south', place: 'Chile' });
+  assert.equal(hemisphereFor('Etc/GMT+3', 'pt-BR').hemisphere, 'south');
+  assert.equal(hemisphereFor('UTC', 'en'), null);
+  assert.equal(hemisphereFor('UTC', 'not a locale'), null);
+  assert.equal(hemisphereFor(undefined, ''), null);
+});
+
+test('a new wheel takes the matched hemisphere; a saved choice is never replaced', () => {
+  const storage = memoryStorage();
+  const store = createStore(catalog, { storage, hemisphere: 'south' });
+  assert.equal(store.getState().settings.hemisphere, 'south');
+  store.dispatch({ ...settings, hemisphere: 'north', reserves: 'show' });
+  const reloaded = createStore(catalog, { storage, hemisphere: 'south' });
+  assert.equal(reloaded.getState().settings.hemisphere, 'north');
+});
+
+test('schema 1 data upgrades with empty reserves and is only rewritten by the next change', () => {
+  let state = act(act(initial(), checkin('music.synths', { note: 'kept' })), lock(true));
+  const old = schemaOne(state);
+  const checked = validateState(old);
+  assert.equal(checked.ok, true);
+  assert.equal(checked.state.schema, 2);
+  assert.deepEqual(checked.state.reserves, []);
+  assert.equal(checked.state.settings.reserves, 'show');
+  assert.deepEqual({ ...checked.state, schema: 1, reserves: undefined, settings: undefined },
+    { ...state, schema: 1, reserves: undefined, settings: undefined });
+  const raw = JSON.stringify(old);
+  const storage = memoryStorage([[STORAGE_KEY, raw]]);
+  const store = createStore(catalog, { storage });
+  assert.equal(store.getStatus().mode, 'saved');
+  assert.equal(store.getState().journal.at(-1).kind, 'lock');
+  assert.equal(storage.getItem(STORAGE_KEY), raw);
+  assert.equal(store.dispatch(reading()).saved, true);
+  assert.equal(JSON.parse(storage.getItem(STORAGE_KEY)).schema, 2);
+  const imported = createStore(catalog, { storage: memoryStorage() });
+  assert.equal(imported.importBackup(backup(old)).ok, true);
+  assert.deepEqual(imported.getState().reserves, []);
+  // Upgrading never repairs: a schema 1 record with anything unexpected stays invalid.
+  for (const broken of [{ ...old, extra: true }, { ...old, reserves: [] },
+    { ...old, settings: { ...old.settings, reserves: 'show' } }, { ...old, settings: null }]) {
+    assert.equal(validateState(broken).ok, false);
+  }
+});
+
+test('reserves readings stand apart from activity, the journal and the lock', () => {
+  const base = act(act(initial(), checkin()), lock(true));
+  const later = new Date('2026-10-19T15:30:00.000Z');
+  const state = act(base, reading({ energy: 1.5, willpower: 4, flow: 2.5, demand: 3 }), later);
+  assert.deepEqual(state.journal, base.journal);
+  assert.deepEqual([state.current, state.currentSince, state.locked, state.mood],
+    [base.current, base.currentSince, base.locked, base.mood]);
+  assert.equal(state.reserves.length, 1);
+  assert.match(state.reserves[0].id, /^reserve\./);
+  assert.deepEqual({ ...state.reserves[0], id: 'x' }, { id: 'x', at: later.toISOString(),
+    localDate: state.reserves[0].localDate, energy: 1.5, willpower: 4, flow: 2.5, demand: 3 });
+  for (const bad of [{ energy: 0.5 }, { energy: 5.5 }, { willpower: 2.25 }, { flow: Number.NaN },
+    { flow: '3' }, { demand: 2.5 }, { demand: 0 }, { demand: 6 }, { demand: undefined }]) {
+    assert.throws(() => act(state, reading(bad), later), /from 1 to 5|Demand/);
+  }
+  assert.throws(() => act(state, reading(), new Date('2026-10-19T15:00:00.000Z')), /device clock/);
+  assert.throws(() => act(state, { ...reading(), extra: 1 }, later), /unsupported fields/);
+  const removed = act(state, { type: 'deleteReserve', id: state.reserves[0].id });
+  assert.deepEqual(removed.reserves, []);
+  assert.deepEqual(removed.journal, base.journal);
+  assert.throws(() => act(removed, { type: 'deleteReserve', id: state.reserves[0].id }), /no longer exists/);
+  const corrupt = [
+    value => { value.reserves.push(copy(value.reserves[0])); },
+    value => { value.reserves[0].energy = 6; },
+    value => { value.reserves[0].extra = true; },
+    value => { value.reserves.unshift({ ...copy(value.reserves[0]), id: 'reserve.later', at: '2027-01-01T00:00:00.000Z' }); },
+  ];
+  for (const change of corrupt) {
+    const value = copy(state);
+    change(value);
+    assert.equal(validateState(value).ok, false);
+  }
+});
+
+test('the reading is the lower of energy and willpower, with zones and strain from that', () => {
+  assert.equal(capacity({ energy: 4.5, willpower: 2 }), 2);
+  assert.deepEqual([1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5].map(value => zoneFor(value).id),
+    ['empty', 'empty', 'low', 'low', 'steady', 'steady', 'good', 'good', 'full']);
+  assert.equal(strain({ energy: 3, willpower: 3, demand: null }), null);
+  assert.equal(strain({ energy: 3, willpower: 4, demand: 3 }).id, 'within');
+  assert.equal(strain({ energy: 3, willpower: 2.5, demand: 3 }).id, 'stretch');
+  assert.equal(strain({ energy: 3, willpower: 2, demand: 3 }).id, 'stretch');
+  assert.equal(strain({ energy: 1.5, willpower: 5, demand: 3 }).id, 'painful');
+  const summary = summarizeReserves([
+    { energy: 1, willpower: 3, flow: 2 }, { energy: 3, willpower: 3, flow: 4 }, { energy: 5, willpower: 5, flow: 5 },
+  ]);
+  assert.equal(summary.count, 3);
+  assert.deepEqual(summary.averages, { energy: 3, willpower: 3.7, flow: 3.7 });
+  assert.deepEqual(summary.zones.map(zone => [zone.id, zone.count]), [['full', 1], ['steady', 1], ['empty', 1]]);
+  assert.equal(summarizeReserves([]).latest, null);
 });

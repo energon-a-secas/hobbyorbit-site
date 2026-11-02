@@ -8,7 +8,9 @@ const snapshotFields = ['id', 'label', 'icon', 'color'];
 const entryFields = ['id', 'at', 'localDate', 'kind', 'hobby', 'previousId',
   'mood', 'trigger', 'note', 'locked'];
 const stateFields = ['schema', 'starter', 'nodes', 'rootIds', 'current',
-  'currentSince', 'mood', 'locked', 'journal', 'settings'];
+  'currentSince', 'mood', 'locked', 'journal', 'reserves', 'settings'];
+const reserveFields = ['id', 'at', 'localDate', 'energy', 'willpower', 'flow', 'demand'];
+export const SCHEMA = 2;
 
 export function requireValue(condition, message) {
   if (!condition) throw new Error(message);
@@ -75,6 +77,12 @@ export function localDate(value, name = 'Local date') {
     `${name} is not a real calendar date.`);
 }
 
+/** The device's local calendar date, YYYY-MM-DD. */
+export function localDateOf(date) {
+  return [String(date.getFullYear()).padStart(4, '0'),
+    String(date.getMonth() + 1).padStart(2, '0'), String(date.getDate()).padStart(2, '0')].join('-');
+}
+
 export function instant(value, name = 'Timestamp') {
   requireValue(typeof value === 'string' &&
     /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?Z$/.test(value),
@@ -130,9 +138,56 @@ export function validateTree(nodes, rootIds) {
 }
 
 export function validateSettings(settings) {
-  exactFields(settings, ['hemisphere', 'motion'], 'Settings');
+  exactFields(settings, ['hemisphere', 'motion', 'reserves'], 'Settings');
   requireValue(['south', 'north'].includes(settings.hemisphere), 'Choose a northern or southern hemisphere.');
   requireValue(['system', 'reduce'].includes(settings.motion), 'Choose a supported motion setting.');
+  requireValue(['show', 'hide'].includes(settings.reserves), 'Choose whether to show your reserves.');
+}
+
+/** A reserves reading: 1 to 5 in half steps. */
+export function level(value, name) {
+  requireValue(typeof value === 'number' && value >= 1 && value <= 5 && Number.isInteger(value * 2),
+    `${name} must be from 1 to 5, in half steps.`);
+}
+
+export function demandField(value) {
+  requireValue(value === null || (Number.isInteger(value) && value >= 1 && value <= 5),
+    'Demand must be skipped or a whole number from 1 to 5.');
+}
+
+function validateReserves(reserves) {
+  arrayField(reserves, 'Reserves');
+  const ids = new Set();
+  let previousTime = -Infinity;
+  for (const reading of reserves) {
+    exactFields(reading, reserveFields, 'Reserves reading');
+    identifier(reading.id, 'Reserves reading ID');
+    requireValue(!ids.has(reading.id), 'Reserves reading IDs must be unique.');
+    ids.add(reading.id);
+    instant(reading.at, 'Reserves reading time');
+    localDate(reading.localDate);
+    const time = Date.parse(reading.at);
+    requireValue(time >= previousTime, 'Reserves readings must be in their recorded chronological order.');
+    previousTime = time;
+    level(reading.energy, 'Energy');
+    level(reading.willpower, 'Willpower');
+    level(reading.flow, 'Flow');
+    demandField(reading.demand);
+  }
+}
+
+/**
+ * Schema 1 had no reserves. Its data gains an empty list and a visible widget;
+ * nothing else changes, and storage is only rewritten by the next real change.
+ * Anything else, including future schemas, is returned untouched for validation.
+ */
+export function upgradeState(value) {
+  try {
+    plainObject(value, 'Saved data');
+    plainObject(value.settings, 'Settings');
+  } catch { return value; }
+  if (value.schema !== 1 || Object.hasOwn(value, 'reserves') || Object.hasOwn(value.settings, 'reserves')) return value;
+  return { ...value, schema: SCHEMA, reserves: [], settings: { ...value.settings, reserves: 'show' } };
 }
 
 function validateJournal(journal) {
@@ -166,7 +221,7 @@ function validateJournal(journal) {
 
 export function assertState(value) {
   plainObject(value, 'Saved data');
-  requireValue(value.schema === 1, 'Unsupported data schema. Keep the original backup.');
+  requireValue(value.schema === SCHEMA, 'Unsupported data schema. Keep the original backup.');
   exactFields(value, stateFields, 'Saved data');
   booleanField(value.starter, 'Starter flag');
   validateTree(value.nodes, value.rootIds);
@@ -180,6 +235,7 @@ export function assertState(value) {
   }
   validateSettings(value.settings);
   validateJournal(value.journal);
+  validateReserves(value.reserves);
 }
 
 export function cloneData(value) {
