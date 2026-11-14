@@ -1,0 +1,90 @@
+/* The app family's shared pieces: the crumb back to the catalog and the shelf at
+   the foot of every help and privacy page. Canonical in apps-site/css/family.css;
+   tools/build-catalog.py --stamp-family copies it byte for byte to
+   hobbyorbit-site/kurukuru/family.css for Kurukuru's pages, so edit it here.
+   Tokens come from the fleet's base.css, with the values as fallbacks. */
+
+.neo-crumb-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 24px; }
+.neo-crumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 10px;
+  color: var(--text-secondary, #cacaca);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+.neo-crumb a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--text-secondary, #cacaca);
+  text-decoration: underline;
+  text-decoration-color: rgb(255 255 255 / 28%);
+  text-underline-offset: 0.25em;
+}
+.neo-crumb a:hover { color: var(--text-primary, #f9f9f9); text-decoration-color: currentColor; }
+.neo-crumb [aria-current] { color: var(--text-primary, #f9f9f9); font-weight: 600; }
+.neo-crumb__sep { color: var(--text-secondary, #cacaca); }
+
+.neo-family {
+  width: 100%;
+  margin-top: 56px;
+  padding: 36px 0 28px;
+  border-top: 1px solid var(--border, rgb(255 255 255 / 10%));
+}
+.neo-family__inner { width: min(100% - 32px, 1000px); margin: 0 auto; display: grid; gap: 12px; }
+.neo-family__shelf {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+  gap: 4px;
+}
+.neo-family__app {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 6px;
+  height: 100%;
+  padding: 8px 2px;
+  border-radius: 14px;
+  color: var(--text-secondary, #cacaca);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+}
+.neo-family__app img { width: 44px; height: 44px; border-radius: 22.5%; }
+.neo-family__app:hover { background: var(--surface-2, rgb(255 255 255 / 6%)); color: var(--text-primary, #f9f9f9); }
+.neo-family__app[aria-current] { color: var(--text-primary, #f9f9f9); }
+.neo-family__app[aria-current] img { box-shadow: 0 0 0 2px var(--bg, #040714), 0 0 0 4px var(--app-ink, var(--accent-bright, #e08fdf)); }
+.neo-family__all, .neo-family__legal { margin: 0; }
+.neo-family__all a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--text-primary, #f9f9f9);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--app-ink, var(--accent-bright, #e08fdf));
+  text-underline-offset: 0.25em;
+}
+.neo-family__legal { max-width: 46rem; color: var(--text-secondary, #cacaca); font-size: 0.875rem; line-height: 1.6; }
+.neo-family__legal a { color: inherit; text-decoration: underline; text-underline-offset: 0.2em; }
+.neo-family__legal a:hover, .neo-family__all a:hover { color: var(--text-primary, #f9f9f9); text-decoration-thickness: 2px; }
+.neo-family :focus-visible, .neo-crumb :focus-visible {
+  outline: 2px solid var(--app-ink, var(--accent-bright, #e08fdf));
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (max-width: 480px) {
+  .neo-family__shelf { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media print {
+  .neo-family { display: none; }
+}
