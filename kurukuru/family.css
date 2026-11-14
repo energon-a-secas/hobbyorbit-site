@@ -86,5 +86,5 @@
   .neo-family__shelf { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 @media print {
-  .neo-family { display: none; }
+  .neo-family, .neo-crumb, .neo-crumb-row { display: none; }
 }
