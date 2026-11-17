@@ -17,7 +17,13 @@
 .info-document a:hover { text-decoration-thickness: 2px; }
 .info-document :focus-visible { outline: 2px solid var(--accent-bright); outline-offset: 5px; border-radius: 3px; }
 
-.info-kicker { color: var(--text-muted); font-size: .875rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+/* The kicker follows the h1 as a quiet line; the crumb above says where the page sits. */
+.info-kicker { margin-top: -.5rem; color: var(--text-secondary); font-size: .875rem; font-weight: 500; }
+/* The crumb sits just under the header, as on the apps catalog's own pages. */
+.info-document { padding-top: 8px; }
+.info-document > .neo-crumb { margin-bottom: clamp(12px, 3vw, 32px); }
+/* The app family shelf lines up with this page's one column. */
+.neo-family { --neo-family-width: 70ch; }
 .info-document .info-lead { color: var(--text-secondary); font-size: 1.25rem; line-height: 1.6; }
 .info-status { display: inline-flex; align-items: center; gap: .6rem; margin: .5rem 0 1.5rem; padding: .45rem .9rem; border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); border-radius: 999px; background: color-mix(in srgb, var(--accent) 10%, transparent); color: var(--text-primary); font-size: .9375rem; font-weight: 600; }
 .info-status::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: 0 0 auto; }

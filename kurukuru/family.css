@@ -33,7 +33,9 @@
   padding: 36px 0 28px;
   border-top: 1px solid var(--border, rgb(255 255 255 / 10%));
 }
-.neo-family__inner { width: min(100% - 32px, 1000px); margin: 0 auto; display: grid; gap: 12px; }
+/* The shelf lines up with its page's column: 1000px on apps-site (the rail and
+   the body), and a host with one column sets --neo-family-width to match. */
+.neo-family__inner { width: min(100% - 32px, var(--neo-family-width, 1000px)); margin: 0 auto; display: grid; gap: 12px; }
 .neo-family__shelf {
   list-style: none;
   margin: 0;
